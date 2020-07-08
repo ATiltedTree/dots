@@ -1,0 +1,47 @@
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+
+# Shell stuff
+yay -S \
+  fish \
+  starship \
+  lsd \
+  gnome-keyring
+
+# Spotify
+yay -S \
+  spotify-tui \
+  spotifyd-full
+
+# DE
+yay -S \
+  alacritty \
+  visual-studio-code-bin \
+  gimp \
+  vlc \
+  discord \
+  firefox \
+  plasma-meta \
+  plasma-wayland-session \
+  dolphin-plugins
+
+# Programing languages
+yay -S \
+  rust \
+  cmake \
+  cmake-format \
+  docker
+
+# Gaming
+yay -S \
+  steam \
+  steam-native-runtime \
+  wine \
+  mono
+
+# Graphics
+yay -S \
+  nvidia \
+  opencl-nvidia \
+  lib32-nvidia-utils
+
+{{ end -}}
