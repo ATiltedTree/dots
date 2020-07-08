@@ -20,6 +20,7 @@ set -Ux GRADLE_USER_HOME $XDG_DATA_HOME/gradle
 
 # Normal
 set -Ux EDITOR nvim
+set -Ux VISUAL code
 set -Ux NINJA_STATUS "[%s/%t %p :: %e] "
 set -Ux GTK_USE_PORTAL 1
 

@@ -3,19 +3,22 @@
 {{ if eq .chezmoi.osRelease.id "arch" -}}
 
 # Shell stuff
-yay -S \
+yay --needed -S \
   fish \
   starship \
   lsd \
   gnome-keyring
 
 # Spotify
-yay -S \
+yay --needed -S \
   spotify-tui \
   spotifyd-full
 
+systemctl --user enable spotifyd
+systemctl --user start spotifyd
+
 # DE
-yay -S \
+yay --needed -S \
   alacritty \
   visual-studio-code-bin \
   gimp \
@@ -27,21 +30,21 @@ yay -S \
   dolphin-plugins
 
 # Programing languages
-yay -S \
+yay --needed -S \
   rust \
   cmake \
   cmake-format \
   docker
 
 # Gaming
-yay -S \
+yay --needed -S \
   steam \
   steam-native-runtime \
   wine \
   mono
 
 # Drivers
-yay -S \
+yay --needed -S \
   nvidia \
   opencl-nvidia \
   lib32-nvidia-utils \
