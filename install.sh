@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "---------- ATiltedTree's Dots ----------"
 echo "How do you want to install chezmoi?"
 
@@ -15,6 +17,7 @@ select type in Arch Bin; do
     echo "---------- Installing Dots ----------"
     ~/bin/chezmoi init --apply https://github.com/ATiltedTree/dots.git
     ;;
+  *) echo "invalid option $REPLY" ;;
   esac
 done
 
