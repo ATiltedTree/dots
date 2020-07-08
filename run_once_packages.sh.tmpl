@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 {{ if eq .chezmoi.osRelease.id "arch" -}}
 
 # Shell stuff
@@ -38,10 +40,12 @@ yay -S \
   wine \
   mono
 
-# Graphics
+# Drivers
 yay -S \
   nvidia \
   opencl-nvidia \
-  lib32-nvidia-utils
+  lib32-nvidia-utils \
+  splix \
+  epson-inkjet-printer-escpr
 
 {{ end -}}

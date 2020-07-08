@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # Get from bitwarden and base64 decode and import
 echo "{{ (bitwarden "item" "GPG Key").notes }}" | base64 -d | gpg --import
 
