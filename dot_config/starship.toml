@@ -1,0 +1,23 @@
+[directory]
+truncation_length = 0
+
+[character]
+symbol = "->"
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[git_status]
+ahead    = ""
+behind   = ""
+deleted  = "🞩"
+diverged = ""

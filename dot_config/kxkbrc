@@ -1,0 +1,13 @@
+[Layout]
+DisplayNames=en
+LayoutList=us(de_se_fi)
+LayoutLoopCount=-1
+Model=pc86
+Options=
+ResetOldOptions=true
+ShowFlag=false
+ShowLabel=true
+ShowLayoutIndicator=true
+ShowSingle=false
+SwitchMode=Global
+Use=true

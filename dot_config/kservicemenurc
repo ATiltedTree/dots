@@ -1,0 +1,14 @@
+[Show]
+SetAsWallpaperAndLockScreen=true
+compressfileitemaction=true
+decrypt-view=true
+encrypt=false
+extractfileitemaction=true
+installFont=true
+kactivitymanagerd_fileitem_linking_plugin=true
+openTerminalHere=true
+openvscode=true
+plasmavaultfileitemaction=true
+runInKonsole=true
+sharefileitemaction=true
+tagsfileitemaction=true

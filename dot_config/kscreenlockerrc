@@ -1,0 +1,8 @@
+[$Version]
+update_info=kscreenlocker.upd:0.1-autolock
+
+[Greeter]
+Theme=Apollo
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/atiltedtree/.local/share/wallpapers/Sweet-Wallpapers/Sweet-S3.png
