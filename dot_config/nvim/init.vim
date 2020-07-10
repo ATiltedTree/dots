@@ -4,11 +4,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'APZelos/blamer.nvim'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --rust-completer --ts-completer --system-boost' }
 Plug 'sheerun/vim-polyglot'
 Plug 'chiel92/vim-autoformat'
 Plug 'scrooloose/syntastic'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
