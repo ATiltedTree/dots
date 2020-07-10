@@ -68,12 +68,6 @@ cursor:
 # Live config reload (changes require restart)
 live_config_reload: true
 
-# Startup directory
-#
-# Directory the shell is started in. If this is unset, or `None`, the working
-# directory of the parent process will be used.
-working_directory: None
-
 mouse:
   url:
     # URL modifiers
