@@ -96,7 +96,7 @@ switchTabsOnHover=false
 global=Alt+F1
 
 [Containments][52][Applets][53][Shortcuts]
-global=Ctrl+F1
+global=Alt+F1
 
 [Containments][52][Applets][55]
 immutability=1
@@ -223,6 +223,9 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.kickoff
 
+[Containments][71][Applets][72][Configuration]
+PreloadWeight=100
+
 [Containments][71][Applets][72][Configuration][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
@@ -235,7 +238,7 @@ switchTabsOnHover=false
 global=Alt+F1
 
 [Containments][71][Applets][72][Shortcuts]
-global=Alt+F1
+global=
 
 [Containments][71][Applets][74]
 immutability=1
@@ -342,4 +345,4 @@ knownItems=org.kde.plasma.bluetooth,org.kde.plasma.mediacontroller,org.kde.plasm
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=
+screenMapping=desktop:/chrome-jgeocpdicgmkeemopbanhokmhcgcflmi-Default.desktop,0,desktop:/Might and Magic® VI.desktop,0,desktop:/steam.desktop,0,desktop:/Just Cause 3.desktop,0,desktop:/The Witcher 3 Wild Hunt.desktop,0
