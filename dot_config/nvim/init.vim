@@ -7,6 +7,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chiel92/vim-autoformat'
 Plug 'scrooloose/syntastic'
+Plug 'neovim/nvim-lsp'
 
 call plug#end()
 
@@ -33,3 +34,15 @@ set spellcapcheck=""
 set mouse=nvi
 
 colorscheme onedark
+
+# Disable spellchek in terminal mode
+autocmd TermOpen * setlocal spell spelllang=
+
+# Setup clipboard
+set clipboard=unnamedplus
+
+# CTRL+C and CTRL+V
+noremap <C-c> "+y
+noremap <C-v> "+p
+
+lua require'nvim_lsp'.rust_analyzer.setup({})
