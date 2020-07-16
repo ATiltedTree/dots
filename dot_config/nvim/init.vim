@@ -35,13 +35,13 @@ set mouse=nvi
 
 colorscheme onedark
 
-# Disable spellchek in terminal mode
+" Disable spellchek in terminal mode
 autocmd TermOpen * setlocal spell spelllang=
 
-# Setup clipboard
+" Setup clipboard
 set clipboard=unnamedplus
 
-# CTRL+C and CTRL+V
+" CTRL+C and CTRL+V
 noremap <C-c> "+y
 noremap <C-v> "+p
 
