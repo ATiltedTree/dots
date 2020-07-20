@@ -1,23 +1,31 @@
 call plug#begin(stdpath('data') . '/plugged')
 
+" colorscheme
 Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
+
+" Nice status line
+Plug 'vim-airline/vim-airline'
+
+" Git annotations on the left
 Plug 'airblade/vim-gitgutter'
+
+" Git blame on the current line
 Plug 'APZelos/blamer.nvim'
+
+" Language pack
 Plug 'sheerun/vim-polyglot'
+
+" Format all the languages
 Plug 'chiel92/vim-autoformat'
-Plug 'scrooloose/syntastic'
-Plug 'neovim/nvim-lsp'
 
 call plug#end()
 
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ 'separator': { 'left': '', 'right': '' },
-  \ 'subseparator': { 'left': '', 'right': '' }
-  \ }
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
 
-let g:blamer_enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+
 
 let g:loaded_python_provider = 0
 
@@ -45,4 +53,4 @@ set clipboard=unnamedplus
 noremap <C-c> "+y
 noremap <C-v> "+p
 
-lua require'nvim_lsp'.rust_analyzer.setup({})
+" lua require'nvim_lsp'.rust_analyzer.setup({})
