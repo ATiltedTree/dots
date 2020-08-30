@@ -1,0 +1,13 @@
+[user]
+  email = allescrafterx@gmail.com
+  name = Tilmann Meyer
+  signingkey = A95E199988004B62
+[core]
+  autocrlf = false
+  eol = lf
+#[url "git@github.com:"]
+#  insteadOf = https://github.com/
+[pull]
+  rebase = true
+[commit]
+  gpgsign = true
