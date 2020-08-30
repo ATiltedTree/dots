@@ -57,7 +57,6 @@ Plug 'puremourning/vimspector'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
 " TodoIst
-let todoist = { 'key': "afa7d2083ace6c37985b854703857ef8d89cb953" }
 Plug 'romgrk/todoist.vim', { 'do': ':TodoistInstall' }
 
 " Nice start screen
