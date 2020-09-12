@@ -19,18 +19,11 @@ end
 switch $XDG_SESSION_TYPE
   case wayland
     set -gx MOZ_ENABLE_WAYLAND 1
-    set -gx QT_QPA_PLATFORM wayland-egl
-    set -gx CLUTTER_BACKEND wayland
-    set -gx ECORE_EVAS_ENGINE wayland-egl
-    set -gx ELM_ENGINE wayland_egl
     set -gx SDL_VIDEODRIVER wayland
-    set -gx _JAVA_AWT_WM_NONREPARENTING 1
-    set -gx NO_AT_BRIDGE 1
     set -gx QT_QPA_PLATFORMTHEME gnome
-
+    set -gx QT_STYLE_OVERRIDE kvantum
   case x11
 
   case tty
 
-  case *
 end

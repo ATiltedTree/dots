@@ -22,14 +22,14 @@ input * {
 output HDMI-A-1 {
     resolution 1920x1080
     position 0 0
-    bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+    bg /home/atiltedtree/Downloads/Background.png fill
 }
 
 ## Secondary
 output HDMI-A-2 {
     resolution 1600x900
     position 1920 350
-    bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+    bg /home/atiltedtree/Downloads/Background.png fill
 }
 
 # Idle configuration ###########################################################
