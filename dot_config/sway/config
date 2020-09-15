@@ -217,9 +217,6 @@ exec {
     ## Polkit interface
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-    ## GnomeKeyring
-    gnome-keyring-daemon --start --components=secrets,pkcs11
-
     ## Systemd env import - GNUPGHOME is set in fish/conf.d/00_xdg.fish
     systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK GNUPGHOME
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK GNUPGHOME

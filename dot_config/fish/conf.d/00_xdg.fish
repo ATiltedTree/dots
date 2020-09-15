@@ -18,9 +18,6 @@ set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 ## NPM
 set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 
-## JAVA
-set -gx _JAVA_OPTIONS -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
-
 ## CCache
 set -gx CCACHE_CONFIGPATH $XDG_CONFIG_HOME/ccache.config
 
@@ -29,14 +26,8 @@ set -gx CCACHE_CONFIGPATH $XDG_CONFIG_HOME/ccache.config
 ## Cargo
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 
-# RustUp
-set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
-
 ## GPG
 set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
-
-## Go
-set -gx GOPATH $XDG_DATA_HOME/go
 
 ## Wine
 set -gx WINEPREFIX $XDG_DATA_HOME/wine/prefixes/default
