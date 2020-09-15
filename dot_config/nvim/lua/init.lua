@@ -2,16 +2,19 @@ vim.o.termguicolors = true
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.number = true
-vim.o.signcolumn = "auto:2"
-vim.o.spell = true
-vim.o.spelllang = "en_us"
+vim.o.cursorline = true
+vim.o.signcolumn = "yes:2"
 vim.o.mouse = "nvi"
 vim.o.guifont = "Fira Code:h10"
 vim.o.updatetime = 500
 vim.o.clipboard = "unnamedplus"
-vim.o.directory = vim.call("stdpath","cache") .. "/swap//"
+vim.o.directory = vim.fn.stdpath("cache") .. "/swap//"
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.title = true
 
 vim.cmd("filetype plugin indent on")
+vim.cmd("syntax enable")
 
 -- Provider setup
 
