@@ -9,12 +9,6 @@ set -gx EDITOR nvim
 # No lesshst
 set -gx LESSHISTFILE -
 
-set TTY1 (tty)
-if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
-  set -x XDG_SESSION_TYPE wayland
-  set -x XDG_SESSION_DESKTOP sway
-end
-
 # Wayland specific settings
 switch $XDG_SESSION_TYPE
   case wayland
