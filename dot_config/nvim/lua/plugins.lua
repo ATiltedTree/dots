@@ -51,7 +51,7 @@ return require("packer").startup(function()
 
   use "airblade/vim-gitgutter"
 
-  use "jreybert/vimagit"
+  use "kdheepak/lazygit.nvim"
   use "antoinemadec/FixCursorHold.nvim"
 
   use "jiangmiao/auto-pairs"
