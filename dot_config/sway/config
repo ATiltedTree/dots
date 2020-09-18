@@ -22,14 +22,14 @@ input * {
 output HDMI-A-1 {
     resolution 1920x1080
     position 0 0
-    bg /home/atiltedtree/Downloads/Background.png fill
+    bg ~/.local/share/backgrounds/Symbolics-1.jpg fill
 }
 
 ## Secondary
 output HDMI-A-2 {
     resolution 1600x900
     position 1920 350
-    bg /home/atiltedtree/Downloads/Background.png fill
+    bg ~/.local/share/backgrounds/Symbolics-1.jpg fill
 }
 
 # Idle configuration ###########################################################
@@ -210,9 +210,6 @@ exec {
 
     ## Notification overlay
     mako
-
-    ## NetworkManager applet
-    nm-applet --indicator
 
     ## Polkit interface
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

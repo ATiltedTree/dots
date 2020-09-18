@@ -31,10 +31,43 @@ return require("packer").startup(function()
   use {
     "tjdevries/express_line.nvim",
     config = function()
+      local builtin = require("el.builtin")
+      local extensions = require("el.extensions")
+      local sections = require("el.sections")
+      local subscribe = require("el.subscribe")
+
+      local lsp_statusline = require("el.plugins.lsp_status")
+
       require("el").setup {
-      
+        generator = function(win_id)
+          return {
+            extensions.mode,
+            sections.split,
+            subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
+              local icon = extensions.file_icon(_, bufnr)
+              if icon then return icon .. " " end
+
+              return ""
+            end),
+            builtin.responsive_file(130),
+            sections.collapse_builtin {" ", builtin.modified_flag},
+            sections.split,
+            lsp_statusline.server_progress,
+            subscribe.buf_autocmd("el_git_status", "BufWritePost", function(window, buffer)
+              return extensions.git_changes(window, buffer)
+            end),
+            "[",
+            builtin.line,
+            " : ",
+            builtin.column,
+            "]",
+            sections.collapse_builtin {"[", builtin.help_list, builtin.readonly_list, "]"},
+            builtin.filetype,
+          }
+        end,
       }
     end,
+    requires = {{"kyazdani42/nvim-web-devicons"}},
   }
 
   use {
@@ -69,11 +102,15 @@ return require("packer").startup(function()
         require("telescope.builtin").live_grep {}
       end)
     end,
-    requires = {{"nvim-lua/popup.nvim", requires = {"nvim-lua/plenary.nvim"}}},
+    requires = {
+      {"nvim-lua/popup.nvim", requires = {"nvim-lua/plenary.nvim"}},
+      {"kyazdani42/nvim-web-devicons"},
+    },
   }
 
   use {
     "puremourning/vimspector",
+    disable = true,
     config = function()
       vim.g.vimspector_enable_mappings = "HUMAN"
     end,
@@ -154,6 +191,11 @@ return require("packer").startup(function()
     config = function()
       vim.g.diagnostic_enable_virtual_text = 1
       vim.g.diagnostic_virtual_text_prefix = " "
+
+      vim.fn.sign_define("LspDiagnosticsErrorSign", {text = "", texthl = "LspDiagnosticsError"})
+      vim.fn.sign_define("LspDiagnosticsWarningSign", {text = "", texthl = "LspDiagnosticsWarning"})
+      vim.fn.sign_define("LspDiagnosticsInformationSign", {text = "", texthl = "LspDiagnosticsInformation"})
+      vim.fn.sign_define("LspDiagnosticsHintSign", {text = "", texthl = "LspDiagnosticsHint"})
 
       require("utils").autocmd("BufEnter", "*", function()
         require("diagnostic").on_attach()

@@ -8,10 +8,11 @@ vim.o.mouse = "nvi"
 vim.o.guifont = "Fira Code:h10"
 vim.o.updatetime = 500
 vim.o.clipboard = "unnamedplus"
-vim.o.directory = vim.fn.stdpath("cache") .. "/swap//"
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.title = true
+vim.o.swapfile = false
+vim.o.hidden = true
 
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")

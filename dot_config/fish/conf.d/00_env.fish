@@ -16,6 +16,7 @@ switch $XDG_SESSION_TYPE
     set -gx SDL_VIDEODRIVER wayland
     set -gx QT_QPA_PLATFORMTHEME gnome
     set -gx QT_STYLE_OVERRIDE kvantum
+    set -gx QT_QPA_PLATFORM wayland
   case x11
 
   case tty
