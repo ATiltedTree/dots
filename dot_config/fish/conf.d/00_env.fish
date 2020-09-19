@@ -14,8 +14,7 @@ switch $XDG_SESSION_TYPE
   case wayland
     set -gx MOZ_ENABLE_WAYLAND 1
     set -gx SDL_VIDEODRIVER wayland
-    set -gx QT_QPA_PLATFORMTHEME gnome
-    set -gx QT_STYLE_OVERRIDE kvantum
+    set -gx QT_QPA_PLATFORMTHEME qt5ct
     set -gx QT_QPA_PLATFORM wayland
   case x11
 

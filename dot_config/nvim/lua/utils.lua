@@ -1,7 +1,7 @@
-local utils = {}
+local M = {}
 
-utils.autocmd_callbacks = {}
-utils.mapping_callbacks = {}
+M.autocmd_callbacks = {}
+M.mapping_callbacks = {}
 
 local charset = {}
 do -- [0-9a-zA-Z]
@@ -11,34 +11,34 @@ do -- [0-9a-zA-Z]
 end
 
 -- Generates a random string. Yoinked from https://gist.github.com/haggen/2fd643ea9a261fea2094
-utils.randomString = function(length)
+function M.randomString(length)
   if not length or length <= 0 then return "" end
   math.randomseed(os.clock() ^ 5)
-  return utils.randomString(length - 1) .. charset[math.random(1, #charset)]
+  return M.randomString(length - 1) .. charset[math.random(1, #charset)]
 end
 
-utils.augroup = function(name, clear, callback)
+function M.augroup(name, clear, callback)
   vim.cmd(string.format("augroup %s", name))
-  if clear then vim.cmd("autocmd!") end
+  if clear then vim.cmd [[autocmd!]] end
 
   callback()
 
-  vim.cmd("augroup END")
+  vim.cmd [[augroup END]]
 end
 
-utils.autocmd = function(event, pattern, callback)
-  local rand_identifier = utils.randomString(5)
+function M.autocmd(event, pattern, callback)
+  local rand_identifier = M.randomString(5)
 
   vim.cmd(string.format("autocmd %s %s :lua require(\"utils\").autocmd_callbacks[\"%s\"]()", event,
                         pattern, rand_identifier))
 
-  utils.autocmd_callbacks[rand_identifier] = callback
+  M.autocmd_callbacks[rand_identifier] = callback
 end
 
 local mapping_in_buffer = false
 local mapping_in_buffer_nth = 0
 
-utils.buffer_map = function(buffer, callback)
+function M.buffer_map(buffer, callback)
   mapping_in_buffer = true
   mapping_in_buffer_nth = buffer
   callback()
@@ -46,7 +46,7 @@ utils.buffer_map = function(buffer, callback)
   mapping_in_buffer = false
 end
 
-utils.map = function(mode, binding, opts, callback)
+function M.map(mode, binding, opts, callback)
   if mapping_in_buffer then
 
     vim.api.nvim_buf_set_keymap(mapping_in_buffer_nth, mode, binding,
@@ -60,7 +60,12 @@ utils.map = function(mode, binding, opts, callback)
                                 mode, binding:gsub("<", ""):gsub(">", "")), opts)
 
   end
-  utils.mapping_callbacks[mode .. "_" .. binding:gsub("<", ""):gsub(">", "")] = callback
+  M.mapping_callbacks[mode .. "_" .. binding:gsub("<", ""):gsub(">", "")] = callback
 end
 
-return utils
+function M.send_keys(keys, direct)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true),
+                        direct and "n" or "m", true)
+end
+
+return M
