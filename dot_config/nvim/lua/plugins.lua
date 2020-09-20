@@ -60,7 +60,6 @@ return require("packer").startup(function()
     requires = {{"kyazdani42/nvim-web-devicons"}, {"nvim-lua/lsp-status.nvim"}},
   }
 
-  use "gu-fan/riv.vim"
   use {
     "previm/previm",
     config = function()
