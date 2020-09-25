@@ -22,22 +22,15 @@ input * {
 output HDMI-A-1 {
     resolution 1920x1080
     position 0 0
-    bg ~/.local/share/backgrounds/Symbolics-1.jpg fill
+    bg ~/.local/share/backgrounds/Arch.png fill
 }
 
 ## Secondary
 output HDMI-A-2 {
     resolution 1600x900
     position 1920 350
-    bg ~/.local/share/backgrounds/Symbolics-1.jpg fill
+    bg ~/.local/share/backgrounds/Arch.png fill
 }
-
-# Idle configuration ###########################################################
-exec swayidle -w \
-         timeout 300 'swaylock -f' \
-         before-sleep 'swaylock -f' \
-         timeout 600 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on"'
 
 # Key bindings #################################################################
 
@@ -175,12 +168,6 @@ bindsym XF86AudioPlay  exec playerctl play-pause
 bindsym XF86AudioNext  exec playerctl next
 bindsym XF86AudioPrev  exec playerctl previous
 
-# Status Bar ###################################################################
-
-bar {
-    swaybar_command waybar
-}
-
 # GTK Settings #################################################################
 
 ## GTK uses dbus and does not load them from the config. Why? No idea.
@@ -204,22 +191,13 @@ font pango:Cantarell 10
 ## Hide borders when only one window is shown
 smart_borders on
 
-# AutoStart ####################################################################
+# Window specific ##############################################################
 
-exec {
+for_window [shell="xwayland"]                         title_format "%title [XWayland]"
+for_window [window_role="pop-up"]                     floating enable
+for_window [app_id="udiskie"]                         floating enable
 
-    ## Notification overlay
-    mako
+# SystemD Setup ################################################################
 
-    ## Polkit interface
-    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-    ## Systemd env import - GNUPGHOME is set in fish/conf.d/00_xdg.fish
-    systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK GNUPGHOME
-    dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK GNUPGHOME
-}
-
-# Window config ################################################################
-
-## Show if a window is using XWayland
-for_window [shell="xwayland"] title_format "%title [XWayland]"
+include /etc/sway/config.d/*
+exec systemctl --user start sway.target
