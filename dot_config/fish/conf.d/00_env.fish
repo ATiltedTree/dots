@@ -9,26 +9,38 @@ set -gx EDITOR nvim
 # No lesshst
 set -gx LESSHISTFILE -
 
-# Setup sway
-set TTY1 (tty)
-if test -z "$DISPLAY"; and test $TTY1 = "/dev/tty1"
-  set -x XDG_SESSION_TYPE wayland
-  set -x XDG_SESSION_DESKTOP sway
-end
+# Cache
 
-# Wayland specific settings
-switch $XDG_SESSION_TYPE
-  case wayland
-    set -gx MOZ_ENABLE_WAYLAND 1
-    set -gx SDL_VIDEODRIVER wayland
-    set -gx QT_QPA_PLATFORMTHEME qt5ct
-    set -gx QT_QPA_PLATFORM wayland
-    set -gx _JAVA_AWT_WM_NONREPARENTING 1
-  case x11
+## CCache
+set -gx CCACHE_DIR $XDG_CACHE_HOME/ccache
 
-  case tty
+# Config
 
-end
+## Docker
+set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
+
+## NPM
+set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
+
+## CCache
+set -gx CCACHE_CONFIGPATH $XDG_CONFIG_HOME/ccache.config
+
+# Data
+
+## Cargo
+set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+
+## GPG
+set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
+
+## Wine
+set -gx WINEPREFIX $XDG_DATA_HOME/wine/prefixes/default
+
+# PATH
+set -U fish_user_paths $HOME/.local/bin $CARGO_HOME/bin
+
+# Greeting
+set fish_greeting
 
 # Import into systemd
-systemctl --user import-environment SSH_AUTH_SOCK
+systemctl --user import-environment SSH_AUTH_SOCK GNUPGHOME
