@@ -6,9 +6,18 @@
 
 sudo pacman -Syu --needed base-devel
 
+git clone https://aur.archlinux.org/pikaur.git ~/pikaur
+
+pushd ~/pikaur
+  makepkg -si
+popd
+
+rm -rf ~/pikaur
+
+pikaur -Pi packages/PKGBUILD
+
+nvim +PackerSync +qall
+
 {{ end -}}
 
-{{ else if eq .chezmoi.os "darwin" -}}
-
-brew install neovim
 {{ end -}}

@@ -30,6 +30,9 @@ set -gx CCACHE_CONFIGPATH $XDG_CONFIG_HOME/ccache.config
 ## Cargo
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 
+## RustUp
+set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
+
 ## GPG
 set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
 

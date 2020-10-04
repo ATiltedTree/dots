@@ -1,26 +1,12 @@
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
 
 if not packer_exists then
-
-  local directory = string.format("%s/site/pack/packer/opt/", vim.fn.stdpath("data"))
-
-  vim.fn.mkdir(directory, "p")
-
-  print(vim.fn.system(string.format("git clone %s %s", "https://github.com/wbthomason/packer.nvim",
-                                    directory .. "/packer.nvim")))
-
+  print("Packer is missing! Not loading plugins")
   return
 end
 
 return require("packer").startup(function()
   use {"wbthomason/packer.nvim", opt = true}
-
-  use {
-    "arcticicestudio/nord-vim",
-    config = function()
-      vim.cmd [[colorscheme nord]]
-    end,
-  }
 
   use {
     "tjdevries/express_line.nvim",
@@ -29,8 +15,6 @@ return require("packer").startup(function()
       local extensions = require("el.extensions")
       local sections = require("el.sections")
       local subscribe = require("el.subscribe")
-
-      local lsp_statusline = require("el.plugins.lsp_status")
 
       require("el").setup {
         generator = function(win_id)
@@ -42,10 +26,10 @@ return require("packer").startup(function()
             builtin.responsive_file(140, 90),
             sections.collapse_builtin {" ", builtin.modified_flag},
             sections.split,
-            lsp_statusline.server_progress,
-            " ",
             subscribe.buf_autocmd("el_git_changes", "BufWritePost", extensions.git_changes),
-            " ",
+--            "%( [",
+--            subscribe.buf_autocmd("el_git_branch", "BufEnter", extensions.git_branch),
+--            "] %)",
             "[",
             builtin.line_with_width(3),
             ":",
@@ -57,46 +41,44 @@ return require("packer").startup(function()
         end,
       }
     end,
-    requires = {{"kyazdani42/nvim-web-devicons"}, {"nvim-lua/lsp-status.nvim"}},
-  }
-
-  use {
-    "previm/previm",
-    config = function()
-      vim.g.previm_open_cmd = "xdg-open"
-    end,
+    requires = {{"kyazdani42/nvim-web-devicons"}},
   }
 
   use {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("nvim-treesitter.configs").setup {
+      require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
         highlight = {enable = true},
-      }
+      })
     end,
   }
 
+  use {
+    "tjdevries/colorbuddy.nvim",
+    config = function()
+        require("colorbuddy").colorscheme("nord")
+    end
+  }
+
   use "lambdalisue/suda.vim"
-
   use "airblade/vim-gitgutter"
-  use "mhinz/vim-startify"
-
   use "kdheepak/lazygit.nvim"
-
-  use {"krasjet/auto.pairs"}
+  use "mhinz/vim-startify"
+  use "krasjet/auto.pairs"
+  use "mg979/vim-visual-multi"
 
   use {
     "nvim-lua/telescope.nvim",
     config = function()
-      require("telescope").setup {}
+      require("telescope").setup({})
       local utils = require("utils")
 
       utils.map("n", "<space>pf", {}, require("telescope.builtin").find_files)
       utils.map("n", "<space>pg", {}, require("telescope.builtin").live_grep)
       utils.map("n", "<space>pb", {}, require("telescope.builtin").buffers)
       utils.map("n", "<space>pc", {}, require("telescope.builtin").commands)
-      utils.map("n", "<space>pa", {}, require("telescope.builtin").lsp_code_actions)
+      utils.map("n", "<space>ps", {}, require("telescope.builtin").lsp_workspace_symbols)
     end,
     requires = {
       {"nvim-lua/popup.nvim", requires = {"nvim-lua/plenary.nvim"}},
@@ -118,10 +100,10 @@ return require("packer").startup(function()
       local nvim_lsp = require("nvim_lsp")
       local utils = require("utils")
 
-      nvim_lsp.yamlls.setup {}
-      nvim_lsp.jsonls.setup {}
-      nvim_lsp.rust_analyzer.setup {}
-      nvim_lsp.sumneko_lua.setup {
+      nvim_lsp.yamlls.setup({})
+      nvim_lsp.jsonls.setup({})
+      nvim_lsp.rust_analyzer.setup({})
+      nvim_lsp.sumneko_lua.setup({
         settings = {
           Lua = {
             runtime = {version = "LuaJIT", path = vim.split(package.path, ";")},
@@ -135,14 +117,38 @@ return require("packer").startup(function()
           },
         },
         cmd = {"/usr/bin/lua-language-server"},
-      }
+      })
 
       utils.map("n", "<space>gd", {silent = true}, vim.lsp.buf.definition)
       utils.map("n", "<space>gi", {silent = true}, vim.lsp.buf.implementation)
       utils.map("n", "<space>gy", {silent = true}, vim.lsp.buf.type_definition)
       utils.map("n", "<space>gr", {silent = true}, vim.lsp.buf.references)
 
-      utils.map("n", "<space>h", {silent = true}, vim.lsp.buf.hover)
+      utils.map("n", "<space>ah", {silent = true}, vim.lsp.buf.hover)
+      utils.map("n", "<space>af", {silent = true}, vim.lsp.buf.formatting)
+      utils.map("n", "<space>ar", {silent = true}, vim.lsp.buf.rename)
+      utils.map("n", "<space>ac", {silent = true}, vim.lsp.buf.code_action)
+
+      vim.cmd [[autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()]]
+
+      vim.lsp.callbacks["textDocument/publishDiagnostics"] = function(_, _, result)
+        if not result then return end
+        local bufnum = vim.uri_to_bufnr(result.uri)
+        if not bufnum then return end
+        if not vim.api.nvim_buf_is_loaded(bufnum) then return end
+
+        vim.lsp.util.buf_clear_diagnostics(bufnum)
+
+        for _, diagnostic in ipairs(result.diagnostics) do
+          if diagnostic.severity == nil then
+            diagnostic.severity = vim.lsp.protocol.DiagnosticSeverity.Error
+          end
+        end
+
+        vim.lsp.util.buf_diagnostics_save_positions(bufnum,result.diagnostics)
+        vim.lsp.util.buf_diagnostics_underline(bufnum,result.diagnostics)
+        vim.lsp.util.buf_diagnostics_signs(bufnum,result.diagnostics)
+      end
     end,
   }
 
@@ -157,23 +163,25 @@ return require("packer").startup(function()
 
       utils.map("i", "<Tab>", {}, function()
         if vim.fn.pumvisible() == 1 then
-          utils.send_keys("<C-n>",false)
+          utils.send_keys("<C-n>", false)
         else
-          utils.send_keys("<Tab>",true)
+          utils.send_keys("<Tab>", true)
         end
       end)
       utils.map("i", "<S-Tab>", {}, function()
         if vim.fn.pumvisible() == 1 then
-          utils.send_keys("<C-p>",false)
+          utils.send_keys("<C-p>", false)
         else
-          utils.send_keys("<S-Tab>",true)
+          utils.send_keys("<S-Tab>", true)
         end
       end)
 
       utils.map("i", "<C-Space>", {silent = true}, completion.triggerCompletion)
 
-      utils.autocmd("BufEnter", "*", completion.on_attach)
-
+      vim.cmd [[autocmd BufEnter * lua require("completion").on_attach()]]
     end,
+    requires = {{"hrsh7th/vim-vsnip-integ", requires = {{"hrsh7th/vim-vsnip"}}}},
   }
+
+
 end)

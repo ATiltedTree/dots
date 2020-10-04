@@ -1,0 +1,160 @@
+pkgname=atiltedtree
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Packages installed by atiltedtree"
+arch=("any")
+url="https://github.com/ATiltedTree/dots"
+license=('MIT')
+depends=(
+  # base
+  "base"
+  "linux"
+  "linux-firmware"
+  "btrfs-progs"
+  "man-pages"
+  "man-db"
+  "chezmoi"
+
+  # base-devel
+  "autoconf"
+  "automake"
+  "bison"
+  "fakeroot"
+  "flex"
+  "gcc"
+  "make"
+  "patch"
+  "pkgconf"
+  "sudo"
+  "which"
+
+  # other arch
+  "pacman-contrib"
+  "reflector"
+  "pkgstats"
+
+  # boot
+  "intel-ucode"
+
+  # files
+  "udiskie"
+  "lf-git"
+  "lsd"
+  "fd"
+  "ripgrep"
+  "dua-cli"
+  "neofetch"
+  "ntfs-3g"
+
+  # network
+  "wget"
+  "rsync"
+  "openssh"
+  "networkmanager"
+  
+  # security
+  "gnome-keyring"
+  "pinentry"
+  "polkit-gnome"
+
+  # hardware
+  "fwupd"
+  "upower"
+  "logiops"
+  "epson-inkjet-printer-escpr"
+  "samsung-unified-driver"
+
+  # audio
+  "pulseaudio"
+  "pulseaudio-alsa"
+  "pulseaudio-bluetooth"
+  "pavucontrol"
+  "playerctl"
+  "bluez"
+  "bluez-utils"
+  "spotifyd"
+  "spotify-tui"
+
+  # sway
+  "sway"
+  "swaylock"
+  "swayidle"
+  "waybar"
+  "mako"
+  "wofi"
+  "wl-clipboard"
+  "qt5-wayland"
+  "xdg-user-dirs"
+  "xorg-server-xwayland"
+
+  # themes
+  "kvantum-theme-nordic-git"
+  "nordic-theme-git"
+  "qt5ct"
+  
+  # fonts
+  "ttf-fira-code"
+  "ttf-nerd-fonts-symbols"
+  "ttf-twemoji"
+
+  # aur
+  "pikaur"
+  "ccache"
+
+  # git
+  "git"
+  "github-cli"
+  "lazygit"
+
+  # shell
+  "fish"
+  "starship"
+  "bpytop"
+  "alacritty"
+  "pkgfile"
+
+  # dev stuff
+  "neovim-git"
+  "python-pynvim"
+  "fusee-nano-git"
+  "radare2"
+  "r2ghidra-dec"
+
+  ## nodejs
+  "npm"
+
+  ## rust
+  "rust"
+  "rust-analyzer"
+  "lldb"
+
+  ## neovim dev
+  "lua-language-server-git"
+  "lua-format"
+
+  # desktop apps
+  "firefox-developer-edition"
+  "discord"
+  "filezilla"
+
+  # videos
+  "mpv"
+  "youtube-dl"
+  "libva-mesa-driver"
+  "mesa-vdpau"
+  "vulkan-intel"
+
+  # virtual machines
+  "libvirt"
+  "virt-manager"
+  "qemu"
+  "dnsmasq"
+  "ebtables"
+  "edk2-ovmf"
+)
+source=()
+sha256sums=()
+
+#package() {
+#  
+#}

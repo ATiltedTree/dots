@@ -7,7 +7,6 @@ vim.o.number = true
 vim.o.cursorline = true
 vim.o.signcolumn = "yes:2"
 vim.o.mouse = "nvi"
-vim.o.guifont = "Fira Code:h10"
 vim.o.updatetime = 500
 vim.o.clipboard = "unnamedplus"
 vim.o.ignorecase = true
@@ -34,6 +33,20 @@ vim.g.loaded_ruby_provider = 0
 
 ---- Perl
 vim.g.loaded_perl_provider = 0
+
+-- Mappings
+utils.map("", "<C-h>", {}, function()
+  vim.cmd [[wincmd h]]
+end)
+utils.map("", "<C-j>", {}, function()
+  vim.cmd [[wincmd j]]
+end)
+utils.map("", "<C-k>", {}, function()
+  vim.cmd [[wincmd k]]
+end)
+utils.map("", "<C-l>", {}, function()
+  vim.cmd [[wincmd l]]
+end)
 
 -- Plugins
 
