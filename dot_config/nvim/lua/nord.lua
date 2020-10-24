@@ -17,6 +17,8 @@ Color.new("nord13", "#EBCB8B")
 Color.new("nord14", "#A3BE8C")
 Color.new("nord15", "#B48EAD")
 
+Color.new("nord3_bright", "#616E88")
+
 -- UI Components
 
 ---- Editor
@@ -85,9 +87,10 @@ Group.new("Title", colors.nord4,colors.none)
 Group.new("VertSplit", colors.nord2, colors.nord0)
 
 -- Language Base Groups
+Group.new("Normal",colors.none,colors.none)
 Group.new("Boolean", colors.nord9, colors.none)
 Group.new("Character", colors.nord14, colors.none)
-Group.new("Comment", colors.nord3, colors.none)
+Group.new("Comment", colors.nord3_bright, colors.none)
 Group.new("Conditional", colors.nord9, colors.none)
 Group.new("Constant", colors.nord4, colors.none)
 Group.new("Define", colors.nord9, colors.none)
@@ -114,6 +117,10 @@ Group.new("Tag", colors.nord4, colors.none)
 Group.new("Todo", colors.nord13, colors.none)
 Group.new("Type", colors.nord9, colors.none)
 Group.new("Typedef", colors.nord9, colors.none)
+Group.new("Macro", colors.nord8,colors.none,styles.bold)
+
+---- Rust
+Group.new("rustModPath", colors.nord7, colors.none,  styles.none)
 
 -- Plugin Support
 

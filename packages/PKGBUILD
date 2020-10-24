@@ -38,9 +38,9 @@ depends=(
 
   # files
   "udiskie"
-  "lf-git"
   "lsd"
   "fd"
+  "bat"
   "ripgrep"
   "dua-cli"
   "neofetch"
@@ -83,14 +83,12 @@ depends=(
   "mako"
   "wofi"
   "wl-clipboard"
-  "qt5-wayland"
   "xdg-user-dirs"
   "xorg-server-xwayland"
 
   # themes
-  "kvantum-theme-nordic-git"
   "nordic-theme-git"
-  "qt5ct"
+  "papirus-icon-theme"
   
   # fonts
   "ttf-fira-code"
@@ -98,8 +96,7 @@ depends=(
   "ttf-twemoji"
 
   # aur
-  "pikaur"
-  "ccache"
+  "paru"
 
   # git
   "git"
@@ -109,16 +106,14 @@ depends=(
   # shell
   "fish"
   "starship"
-  "bpytop"
+  "bottom"
   "alacritty"
   "pkgfile"
 
   # dev stuff
   "neovim-git"
-  "python-pynvim"
   "fusee-nano-git"
-  "radare2"
-  "r2ghidra-dec"
+  "docker"
 
   ## nodejs
   "npm"
@@ -139,7 +134,6 @@ depends=(
 
   # videos
   "mpv"
-  "youtube-dl"
   "libva-mesa-driver"
   "mesa-vdpau"
   "vulkan-intel"
@@ -155,6 +149,3 @@ depends=(
 source=()
 sha256sums=()
 
-#package() {
-#  
-#}

@@ -9,9 +9,6 @@ input * {
     ## English keyboard with ä, ö, ü and ß on AtlGr + a, o, u and s
     xkb_layout us(de_se_fi)
 
-    ## Scroll on every wheel tick
-    scroll_factor 2
-
     ## Enable numlock by default
     xkb_numlock enabled
 }

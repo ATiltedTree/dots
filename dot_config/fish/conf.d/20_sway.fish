@@ -9,8 +9,6 @@ if test -z "$DISPLAY" -a (tty) = "/dev/tty1"
   # Tell specific apps that they should use wayland
   set -gx MOZ_ENABLE_WAYLAND 1
   set -gx SDL_VIDEODRIVER wayland
-  set -gx QT_QPA_PLATFORMTHEME qt5ct
-  set -gx QT_QPA_PLATFORM wayland
   set -gx _JAVA_AWT_WM_NONREPARENTING 1
 
   # Run sway

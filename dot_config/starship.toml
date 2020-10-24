@@ -1,7 +1,7 @@
 [directory]
 truncation_length = 0
 format = "[$path]($style)( [$read_only]($read_only_style)) "
-read_only_symbol = ""
+read_only = ""
 
 [character]
 success_symbol = "[\\$>](bold green)"

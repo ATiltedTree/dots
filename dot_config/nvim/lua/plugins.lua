@@ -27,9 +27,9 @@ return require("packer").startup(function()
             sections.collapse_builtin {" ", builtin.modified_flag},
             sections.split,
             subscribe.buf_autocmd("el_git_changes", "BufWritePost", extensions.git_changes),
---            "%( [",
---            subscribe.buf_autocmd("el_git_branch", "BufEnter", extensions.git_branch),
---            "] %)",
+            "%( [",
+            subscribe.buf_autocmd("el_git_branch", "BufEnter", extensions.git_branch),
+            "] %)",
             "[",
             builtin.line_with_width(3),
             ":",
@@ -55,18 +55,42 @@ return require("packer").startup(function()
   }
 
   use {
-    "tjdevries/colorbuddy.nvim",
+    "arcticicestudio/nord-vim",
     config = function()
-        require("colorbuddy").colorscheme("nord")
-    end
+        vim.cmd [[colorscheme nord]]
+        vim.cmd [[hi LspDiagnosticsUnderlineError guifg=#BF616A gui=undercurl]]
+        vim.cmd [[hi LspDiagnosticsUnderlineWarning guifg=#EBCB8B gui=undercurl]]
+        vim.cmd [[hi LspDiagnosticsUnderlineInformation guifg=#88C0D0 gui=undercurl]]
+        vim.cmd [[hi LspDiagnosticsUnderlineHint guifg=#5E81AC gui=undercurl]]
+      end
   }
 
   use "lambdalisue/suda.vim"
-  use "airblade/vim-gitgutter"
   use "kdheepak/lazygit.nvim"
-  use "mhinz/vim-startify"
   use "krasjet/auto.pairs"
   use "mg979/vim-visual-multi"
+  use "dag/vim-fish"
+
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup({
+        signs = {
+    add          = {hl = "GitSignsAdd"   , text = "+"},
+    change       = {hl = "GitSignsChange", text = "~"},
+    delete       = {hl = "GitSignsDelete", text = "-"},
+    topdelete    = {hl = "GitSignsDelete", text = "-"},
+    changedelete = {hl = "GitSignsChange", text = "~"},
+  },
+      })
+    end
+  }
+  use {
+    "glepnir/dashboard-nvim",
+    config = function()
+      vim.g.dashboard_default_executive = "telescope"
+    end
+  }
 
   use {
     "nvim-lua/telescope.nvim",

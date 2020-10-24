@@ -11,9 +11,6 @@ set -gx LESSHISTFILE -
 
 # Cache
 
-## CCache
-set -gx CCACHE_DIR $XDG_CACHE_HOME/ccache
-
 # Config
 
 ## Docker
@@ -22,16 +19,10 @@ set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 ## NPM
 set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 
-## CCache
-set -gx CCACHE_CONFIGPATH $XDG_CONFIG_HOME/ccache.config
-
 # Data
 
 ## Cargo
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
-
-## RustUp
-set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 
 ## GPG
 set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
