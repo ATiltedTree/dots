@@ -39,5 +39,10 @@ set -U fish_user_paths $HOME/.local/bin $CARGO_HOME/bin
 # Greeting
 set fish_greeting
 
+## Wayland stuff
+
+# Firefox
+set -gx MOZ_ENABLE_WAYLAND 1
+
 # Import into systemd
-systemctl --user import-environment SSH_AUTH_SOCK GNUPGHOME
+systemctl --user import-environment SSH_AUTH_SOCK GNUPGHOME MOZ_ENABLE_WAYLAND

@@ -37,7 +37,6 @@ depends=(
   "intel-ucode"
 
   # files
-  "udiskie"
   "lsd"
   "fd"
   "bat"
@@ -55,7 +54,6 @@ depends=(
   # security
   "gnome-keyring"
   "pinentry"
-  "polkit-gnome"
 
   # hardware
   "fwupd"
@@ -68,23 +66,23 @@ depends=(
   "pulseaudio"
   "pulseaudio-alsa"
   "pulseaudio-bluetooth"
-  "pavucontrol"
-  "playerctl"
   "bluez"
   "bluez-utils"
   "spotifyd"
   "spotify-tui"
 
-  # sway
-  "sway"
-  "swaylock"
-  "swayidle"
-  "waybar"
-  "mako"
-  "wofi"
-  "wl-clipboard"
-  "xdg-user-dirs"
-  "xorg-server-xwayland"
+  # GNOME
+  "gdm"
+  "gnome-control-center"
+  "gnome-shell-extension-appindicator"
+  "gnome-shell-extension-audio-output-switcher-git"
+  "gnome-shell-extension-pop-shell-git"
+  "gnome-shell-extensions"
+  "gnome-tweaks"
+  "gnome-backgrounds"
+  "nautilus"
+  "nautilus-open-any-terminal"
+  "xdg-user-dirs-gtk"
 
   # themes
   "nordic-theme-git"
@@ -112,6 +110,7 @@ depends=(
 
   # dev stuff
   "neovim-git"
+  "wl-clipboard"
 
   ## Language servers
   "rust-analyzer"
