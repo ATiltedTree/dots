@@ -50,7 +50,7 @@ depends=(
   "rsync"
   "openssh"
   "networkmanager"
-  
+
   # security
   "gnome-keyring"
   "pinentry"
@@ -87,7 +87,7 @@ depends=(
   # themes
   "nordic-theme-git"
   "papirus-icon-theme"
-  
+
   # fonts
   "ttf-fira-code"
   "ttf-nerd-fonts-symbols"
@@ -114,7 +114,6 @@ depends=(
 
   ## Language servers
   "rust-analyzer"
-  "yaml-language-server"
 
   ## rust
   "rust"

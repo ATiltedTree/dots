@@ -1,0 +1,35 @@
+{
+    "workbench.colorTheme": "Nord",
+    "editor.fontFamily": "Fira Code,Symbols Nerd Font",
+    "files.exclude": {
+        "**/target": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.smoothScrolling": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.settings.useSplitJSON": true,
+    "window.menuBarVisibility": "hidden",
+    "window.titleBarStyle": "custom",
+    "extensions.ignoreRecommendations": true,
+    "update.mode": "none",
+    "telemetry.enableTelemetry": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "git.enableCommitSigning": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.minimap.showSlider": "always",
+    "gitlens.recentChanges.highlight.locations": [
+        "gutter",
+        "overview"
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "gitlens.codeLens.enabled": false,
+    "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
+}
