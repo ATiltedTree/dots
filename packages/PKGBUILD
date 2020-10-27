@@ -112,25 +112,18 @@ depends=(
 
   # dev stuff
   "neovim-git"
-  "fusee-nano-git"
-  "docker"
 
-  ## nodejs
-  "npm"
+  ## Language servers
+  "rust-analyzer"
+  "yaml-language-server"
 
   ## rust
   "rust"
-  "rust-analyzer"
   "lldb"
-
-  ## neovim dev
-  "lua-language-server-git"
-  "lua-format"
 
   # desktop apps
   "firefox-developer-edition"
   "discord"
-  "filezilla"
 
   # videos
   "mpv"

@@ -125,23 +125,7 @@ return require("packer").startup(function()
       local utils = require("utils")
 
       nvim_lsp.yamlls.setup({})
-      nvim_lsp.jsonls.setup({})
       nvim_lsp.rust_analyzer.setup({})
-      nvim_lsp.sumneko_lua.setup({
-        settings = {
-          Lua = {
-            runtime = {version = "LuaJIT", path = vim.split(package.path, ";")},
-            diagnostics = {enable = true, globals = {"vim", "use"}},
-            workspace = {
-              library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.expand("~/.cache/pikaur/build/neovim-git/src/neovim-git/src/nvim/lua")] = true,
-              },
-            },
-          },
-        },
-        cmd = {"/usr/bin/lua-language-server"},
-      })
 
       utils.map("n", "<space>gd", {silent = true}, vim.lsp.buf.definition)
       utils.map("n", "<space>gi", {silent = true}, vim.lsp.buf.implementation)
