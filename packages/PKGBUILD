@@ -82,6 +82,7 @@ depends=(
   "gnome-backgrounds"
   "nautilus"
   "nautilus-open-any-terminal"
+  "file-roller"
   "xdg-user-dirs-gtk"
 
   # themes
@@ -91,6 +92,7 @@ depends=(
   # fonts
   "ttf-fira-code"
   "ttf-nerd-fonts-symbols"
+  "ttf-all-the-icons"
   "ttf-twemoji"
 
   # aur
@@ -99,7 +101,6 @@ depends=(
   # git
   "git"
   "github-cli"
-  "lazygit"
 
   # shell
   "fish"
@@ -108,9 +109,13 @@ depends=(
   "alacritty"
   "pkgfile"
 
+  # Games
+  "protontricks"
+  "steam-native-runtime"
+  "wine-installer"
+
   # dev stuff
-  "neovim-git"
-  "wl-clipboard"
+  "emacs"
 
   ## Language servers
   "rust-analyzer"
@@ -118,6 +123,12 @@ depends=(
   ## rust
   "rust"
   "lldb"
+
+  ## Node
+  "npm"
+
+  ## C++
+  "cmake"
 
   # desktop apps
   "firefox-developer-edition"
