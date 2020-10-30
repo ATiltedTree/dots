@@ -39,7 +39,6 @@ depends=(
   # files
   "lsd"
   "fd"
-  "bat"
   "ripgrep"
   "dua-cli"
   "neofetch"
@@ -74,6 +73,7 @@ depends=(
   # GNOME
   "gdm"
   "gnome-control-center"
+  "gnome-system-monitor"
   "gnome-shell-extension-appindicator"
   "gnome-shell-extension-audio-output-switcher-git"
   "gnome-shell-extension-pop-shell-git"
@@ -100,12 +100,10 @@ depends=(
 
   # git
   "git"
-  "github-cli"
 
   # shell
   "fish"
   "starship"
-  "bottom"
   "alacritty"
   "pkgfile"
 
@@ -114,8 +112,14 @@ depends=(
   "steam-native-runtime"
   "wine-installer"
 
+  # Spelling
+  "hunspell"
+  "hunspell-en_US"
+
   # dev stuff
   "emacs"
+  "ghidra"
+  "ghidra-desktop"
 
   ## Language servers
   "rust-analyzer"

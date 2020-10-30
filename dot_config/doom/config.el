@@ -7,7 +7,9 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Tilmann Meyer"
-      user-mail-address "allescrafterx@gmail.com")
+      user-mail-address "allescrafterx@gmail.com"
+      doom-themes-treemacs-theme "doom-colors"
+      +treemacs-git-mode 'deferred)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
