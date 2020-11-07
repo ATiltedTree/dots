@@ -70,20 +70,21 @@ depends=(
   "spotifyd"
   "spotify-tui"
 
-  # GNOME
+  # Sway
+  "sway"
+  "swayidle"
+  "swaylock"
+  "mako"
+  "wofi"
+  "waybar"
+  "polkit-gnome"
+  "playerctl"
+  "pavucontrol"
   "gdm"
-  "gnome-control-center"
-  "gnome-system-monitor"
-  "gnome-shell-extension-appindicator"
-  "gnome-shell-extension-audio-output-switcher-git"
-  "gnome-shell-extension-pop-shell-git"
-  "gnome-shell-extensions"
-  "gnome-tweaks"
-  "gnome-backgrounds"
   "nautilus"
   "nautilus-open-any-terminal"
   "file-roller"
-  "xdg-user-dirs-gtk"
+  "xdg-user-dirs"
 
   # themes
   "nordic-theme-git"
@@ -118,8 +119,6 @@ depends=(
 
   # dev stuff
   "emacs"
-  "ghidra"
-  "ghidra-desktop"
 
   ## Language servers
   "rust-analyzer"

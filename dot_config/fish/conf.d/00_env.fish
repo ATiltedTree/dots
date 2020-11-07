@@ -4,7 +4,7 @@
 set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
 
 # The editor to use
-set -gx EDITOR nvim
+set -gx EDITOR emacs
 
 # No lesshst
 set -gx LESSHISTFILE -
@@ -43,6 +43,10 @@ set fish_greeting
 
 # Firefox
 set -gx MOZ_ENABLE_WAYLAND 1
+
+# Sway
+set -gx XDG_CURRENT_DESKTOP sway
+set -gx XDG_SESSION_DESKTOP sway
 
 # Import into systemd
 systemctl --user import-environment SSH_AUTH_SOCK GNUPGHOME MOZ_ENABLE_WAYLAND
