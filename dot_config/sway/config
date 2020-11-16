@@ -195,5 +195,11 @@ for_window [window_role="pop-up"]                     floating enable
 
 # SystemD Setup ################################################################
 
-include /etc/sway/config.d/*
-exec systemctl --user start sway.target
+exec systemctl --user import-environment \
+                                SWAYSOCK \
+                                DISPLAY \
+                                I3SOCK \
+                                WAYLAND_DISPLAY \
+                                XCURSOR_SIZE \
+                                XCURSOR_THEME \
+  && systemctl --user start sway-session.target
