@@ -13,7 +13,10 @@ return require("packer").startup(function()
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
-        highlight = {enable = true},
+        highlight = {
+          enable = true,
+          use_languagetree = true,
+        },
       })
     end,
   }
@@ -101,11 +104,11 @@ return require("packer").startup(function()
     config = function()
       require("gitsigns").setup({
         signs = {
-          add          = {hl = "GitSignsAdd"   , text = "+"},
-          change       = {hl = "GitSignsChange", text = "~"},
-          delete       = {hl = "GitSignsDelete", text = "-"},
-          topdelete    = {hl = "GitSignsDelete", text = "-"},
-          changedelete = {hl = "GitSignsChange", text = "~"},
+          add          = {hl = 'GitGutterAdd'   , text = '│'},
+          change       = {hl = 'GitGutterChange', text = '│'},
+          delete       = {hl = 'GitGutterDelete', text = '│'},
+          topdelete    = {hl = 'GitGutterDelete', text = '│'},
+          changedelete = {hl = 'GitGutterChange', text = '│'},
         },
       })
     end

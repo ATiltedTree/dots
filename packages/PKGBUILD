@@ -125,18 +125,11 @@ depends=(
   "firefox-developer-edition"
 
   # videos
-  "mpv"
+  "celluloid"
   "youtube-dl"
   "libva-mesa-driver"
   "mesa-vdpau"
   "vulkan-intel"
-
-  # virtual machines
-  "libvirt"
-  "qemu"
-  "dnsmasq"
-  "ebtables"
-  "edk2-ovmf"
 )
 source=()
 sha256sums=()
