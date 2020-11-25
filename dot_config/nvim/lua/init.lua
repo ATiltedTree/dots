@@ -7,11 +7,11 @@ vim.o.signcolumn = "yes:2"
 vim.o.mouse = "nvi"
 vim.o.updatetime = 500
 vim.o.clipboard = "unnamedplus"
-vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.title = true
 vim.o.swapfile = false
 vim.o.hidden = true
+vim.o.wrap = false
 
 vim.cmd [[filetype plugin indent on]]
 vim.cmd [[syntax enable]]

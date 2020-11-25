@@ -104,11 +104,11 @@ return require("packer").startup(function()
     config = function()
       require("gitsigns").setup({
         signs = {
-          add          = {hl = 'GitGutterAdd'   , text = '│'},
-          change       = {hl = 'GitGutterChange', text = '│'},
-          delete       = {hl = 'GitGutterDelete', text = '│'},
-          topdelete    = {hl = 'GitGutterDelete', text = '│'},
-          changedelete = {hl = 'GitGutterChange', text = '│'},
+          add          = {hl = 'GitGutterAdd'   , text = '▎'},
+          change       = {hl = 'GitGutterChange', text = '▎'},
+          delete       = {hl = 'GitGutterDelete', text = '▎'},
+          topdelete    = {hl = 'GitGutterDelete', text = '▎'},
+          changedelete = {hl = 'GitGutterChange', text = '▎'},
         },
       })
     end
@@ -118,6 +118,31 @@ return require("packer").startup(function()
     "glepnir/dashboard-nvim",
     config = function()
       vim.g.dashboard_default_executive = "telescope"
+    end
+  }
+
+  use {
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      local utils = require("utils")
+
+      vim.g.lua_tree_ignore = {".git", "target" }
+      vim.g.lua_tree_git_hl = 1
+      vim.g.lua_tree_show_icons = {
+        git = 1,
+        folders = 1,
+        files = 1
+      }
+      utils.map("n", "<space>op",{},require("tree").toggle)
+    end
+  }
+
+  use {
+    "akinsho/nvim-toggleterm.lua",
+    config = function()
+      require("toggleterm").setup({
+        open_mapping = [[<space>ot]],
+      })
     end
   }
 
@@ -151,7 +176,7 @@ return require("packer").startup(function()
         init_options = {
           closingLabels = true,
         },
-        callbacks = {
+        handlers = {
           ['dart/textDocument/publishClosingLabels'] = require('lsp_extensions.dart.closing_labels').get_callback({highlight = "Comment", prefix = " // "}),
         },
       })
@@ -195,6 +220,24 @@ return require("packer").startup(function()
     config = function()
       vim.o.completeopt = "menuone,noinsert,noselect"
       vim.o.shortmess = vim.o.shortmess .. "c"
+
+      vim.g.completion_customize_lsp_label = {
+        Function = '',
+        Method = '',
+        Reference = '',
+        Enum = '',
+        Field = 'ﰠ',
+        Keyword = '',
+        Variable = '',
+        Folder = '',
+        Snippet = ' ',
+        Operator = '',
+        Module = '',
+        Text = 'ﮜ',
+        Buffers = '',
+        Class = '',
+        Interface = ''
+      }
 
       local utils = require("utils")
       local completion = require("completion")

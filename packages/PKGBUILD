@@ -96,6 +96,7 @@ depends=(
 
   # git
   "git"
+  "lazygit"
 
   # shell
   "fish"
@@ -114,22 +115,26 @@ depends=(
   "wl-clipboard"
 
   ## rust
-  "rust"
+  "rustup"
   "lldb"
-  "rust-analyzer"
 
   ## Node
   "npm"
 
   # desktop apps
   "firefox-developer-edition"
+  "nautilus"
+  "file-roller"
+
+  # Games
+  "steam-native-runtime"
+  "lutris"
+  "lutris-wine-meta"
+  "winetricks"
 
   # videos
   "celluloid"
   "youtube-dl"
-  "libva-mesa-driver"
-  "mesa-vdpau"
-  "vulkan-intel"
 )
 source=()
 sha256sums=()
