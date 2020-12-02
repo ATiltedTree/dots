@@ -96,7 +96,6 @@ depends=(
 
   # git
   "git"
-  "lazygit"
 
   # shell
   "fish"
@@ -111,8 +110,10 @@ depends=(
   "hunspell-en_US"
 
   # dev stuff
-  "neovim"
-  "wl-clipboard"
+  "emacs-pgtk-native-comp-git"
+
+  # C/C++
+  "cmake"
 
   ## rust
   "rustup"
@@ -125,6 +126,8 @@ depends=(
   "firefox-developer-edition"
   "nautilus"
   "file-roller"
+  "eog"
+  "libreoffice-fresh"
 
   # Games
   "steam-native-runtime"
@@ -135,6 +138,13 @@ depends=(
   # videos
   "celluloid"
   "youtube-dl"
+
+  # Virtual Machines
+  "dnsmasq"
+  "ebtables"
+  "edk2-ovmf"
+  "qemu"
+  "virt-manager"
 )
 source=()
 sha256sums=()
