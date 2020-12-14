@@ -110,7 +110,8 @@ depends=(
   "hunspell-en_US"
 
   # dev stuff
-  "emacs-pgtk-native-comp-git"
+  "neovim-git"
+  "wl-clipboard"
 
   # C/C++
   "cmake"
@@ -130,10 +131,6 @@ depends=(
   "libreoffice-fresh"
 
   # Games
-  "steam-native-runtime"
-  "lutris"
-  "lutris-wine-meta"
-  "winetricks"
 
   # videos
   "celluloid"

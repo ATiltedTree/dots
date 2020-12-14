@@ -4,7 +4,7 @@
 bass source /etc/profile
 
 # The editor to use
-set -gx EDITOR emacs
+set -gx EDITOR nvim
 
 # No lesshst
 set -gx LESSHISTFILE -
