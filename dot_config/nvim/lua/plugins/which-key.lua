@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   local utils = require("utils")
 
   utils.map("n", "<leader>", {}, function()
@@ -8,4 +6,7 @@ function M.config()
   end)
 end
 
-return M
+return {
+  "liuchengxu/vim-which-key",
+  config = config,
+}

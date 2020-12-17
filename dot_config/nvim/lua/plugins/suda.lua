@@ -1,7 +1,8 @@
-local M = {}
-
-function M.config()
+function config()
   vim.g.suda_smart_edit = 1
 end
 
-return M
+return {
+  "lambdalisue/suda.vim",
+  config = config,
+}

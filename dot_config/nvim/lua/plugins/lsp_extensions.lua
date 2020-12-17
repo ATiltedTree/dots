@@ -1,7 +1,8 @@
-local M = {}
-
-function M.config()
+function config()
   vim.cmd [[autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require("lsp_extensions").inlay_hints({ prefix = "  ", highlight = "Comment", enabled = {"ChainingHint"} })]]
 end
 
-return M
+return {
+  "nvim-lua/lsp_extensions.nvim",
+  config = config,
+}

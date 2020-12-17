@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   require("gitsigns").setup({
     signs = {
       add          = {hl = 'GitGutterAdd'   , text = '▎'},
@@ -12,4 +10,8 @@ function M.config()
   })
 end
 
-return M
+return {
+  "lewis6991/gitsigns.nvim",
+  config = config,
+  requires = {{"nvim-lua/plenary.nvim"}}
+}

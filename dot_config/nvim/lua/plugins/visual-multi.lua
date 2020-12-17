@@ -1,7 +1,8 @@
-local M = {}
-
-function M.config()
+function config()
 
 end
 
-return M
+return {
+  "mg979/vim-visual-multi",
+  config = config,
+}

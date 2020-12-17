@@ -32,6 +32,8 @@ vim.o.hidden = true
 vim.o.wrap = false
 vim.wo.wrap = false
 
+vim.cmd [[set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾]]
+
 -- Provider setup
 
 ---- Python

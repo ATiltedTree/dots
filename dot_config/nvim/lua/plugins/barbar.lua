@@ -1,15 +1,12 @@
-local M = {}
-
-function M.config()
-
+function config()
   local utils = require("utils")
-
-  utils.map("n", "<C-PageDown>", {}, function()
-    utils.send_keys(":BufferNext<CR>",false)
-  end)
-  utils.map("n", "<C-PageUp>", {}, function()
-    utils.send_keys(":BufferPrevious<CR>",false)
-  end)
+  
+  vim.api.nvim_set_keymap("n", "<C-PageDown>", [[:BufferNext<CR>]], {})
+  vim.api.nvim_set_keymap("n", "<C-PageUp>", [[:BufferPrevious<CR>]], {})
 end
 
-return M
+return {
+  "romgrk/barbar.nvim",
+  config = config,
+  requires = {{"kyazdani42/nvim-web-devicons"}},
+}

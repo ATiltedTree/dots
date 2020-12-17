@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   require("nvim-treesitter.configs").setup({
     ensure_installed = "all",
     highlight = {
@@ -10,4 +8,7 @@ function M.config()
   })
 end
 
-return M
+return {
+  "nvim-treesitter/nvim-treesitter",
+  config = config,
+}

@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   local lspconfig = require("lspconfig")
   local utils = require("utils")
 
@@ -19,4 +17,7 @@ function M.config()
   vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
 end
 
-return M
+return {
+  "neovim/nvim-lspconfig",
+  config = config,
+}

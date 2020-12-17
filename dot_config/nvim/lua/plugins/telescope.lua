@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   local telescope = require("telescope")
   local builtins = require("telescope.builtin")
   local previewers = require("telescope.previewers")
@@ -36,4 +34,13 @@ function M.config()
   --utils.map("n","<leader>hp", {}, telescope.extensions.packer.plugins)
 end
 
-return M
+return {
+  "nvim-telescope/telescope.nvim",
+  config = config,
+  requires = {
+    {"nvim-lua/popup.nvim"},
+    {"nvim-lua/plenary.nvim"},
+    {"nvim-telescope/telescope-packer.nvim"},
+    --{"nvim-telescope/telescope-dap.nvim"},
+  },
+}

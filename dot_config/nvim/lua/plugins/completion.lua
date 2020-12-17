@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   vim.o.completeopt = "menuone,noinsert,noselect"
   vim.o.shortmess = vim.o.shortmess .. "c"
 
@@ -25,24 +23,16 @@ function M.config()
   local utils = require("utils")
   local completion = require("completion")
 
-  utils.map("i", "<Tab>", {}, function()
-    if vim.fn.pumvisible() == 1 then
-      utils.send_keys("<C-n>", false)
-    else
-      utils.send_keys("<Tab>", true)
-    end
-  end)
-  utils.map("i", "<S-Tab>", {}, function()
-    if vim.fn.pumvisible() == 1 then
-      utils.send_keys("<C-p>", false)
-    else
-      utils.send_keys("<S-Tab>", true)
-    end
-  end)
+  vim.api.nvim_set_keymap("i", "<Tab>",   [[pumvisible() ? "\<C-n>" : "\<Tab>"  ]], { expr = true })
+  vim.api.nvim_set_keymap("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
 
   utils.map("i", "<C-Space>", {silent = true}, completion.triggerCompletion)
 
   vim.cmd [[autocmd BufEnter * lua require("completion").on_attach()]]
 end
 
-return M
+return {
+  "nvim-lua/completion-nvim",
+  config = config,
+  requires = {{"hrsh7th/vim-vsnip-integ", requires = {"hrsh7th/vim-vsnip"}}}
+}

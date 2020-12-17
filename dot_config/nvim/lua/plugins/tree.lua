@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   local utils = require("utils")
 
   vim.g.lua_tree_ignore = {".git", "target" }
@@ -32,5 +30,9 @@ function M.config()
   utils.map("n", "<space>op",{},require("tree").toggle)
 end
 
-return M
+return {
+  "kyazdani42/nvim-tree.lua",
+  config = config,
+  requires = {{"kyazdani42/nvim-web-devicons"}}
+}
 

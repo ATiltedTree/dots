@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+function config()
   local gl = require('galaxyline')
   local gls = gl.section
   gl.short_line_list = {'LuaTree','vista','dbui'}
@@ -190,4 +188,8 @@ function M.config()
   }
 end
 
-return M
+return {
+  "glepnir/galaxyline.nvim",
+  config = config,
+  requires = {{"kyazdani42/nvim-web-devicons"}}
+}
