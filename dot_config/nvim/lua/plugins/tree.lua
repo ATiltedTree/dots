@@ -4,7 +4,6 @@ function config()
   vim.g.lua_tree_ignore = {".git", "target" }
   vim.g.lua_tree_git_hl = 1
   vim.g.lua_tree_auto_close = 1
-  vim.g.lua_tree_auto_open = 1
 
   vim.g.lua_tree_show_icons = {
     git = 1,
