@@ -111,26 +111,18 @@ function config()
     }
   }
   gls.left[10] = {
-    LeftEnd = {
-      provider = function() return '' end,
-      separator = '',
-      separator_highlight = {colors.bg,colors.line_bg},
-      highlight = {colors.line_bg,colors.line_bg}
-    }
-  }
-  gls.left[11] = {
     DiagnosticError = {
       provider = 'DiagnosticError',
       icon = '  ',
       highlight = {colors.red,colors.bg}
     }
   }
-  gls.left[12] = {
+  gls.left[11] = {
     Space = {
       provider = function () return ' ' end
     }
   }
-  gls.left[13] = {
+  gls.left[12] = {
     DiagnosticWarn = {
       provider = 'DiagnosticWarn',
       icon = '  ',
@@ -140,7 +132,7 @@ function config()
   gls.right[1]= {
     FileFormat = {
       provider = 'FileFormat',
-      separator = ' ',
+      separator = ' ',
       separator_highlight = {colors.bg,colors.line_bg},
       highlight = {colors.fg,colors.line_bg,'bold'},
     }
@@ -171,7 +163,7 @@ function config()
   gls.short_line_left[1] = {
     BufferType = {
       provider = 'FileTypeName',
-      separator = '',
+      separator = ' ',
       separator_highlight = {colors.purple,colors.bg},
       highlight = {colors.fg,colors.purple}
     }
@@ -181,7 +173,7 @@ function config()
   gls.short_line_right[1] = {
     BufferIcon = {
       provider= 'BufferIcon',
-      separator = '',
+      separator = ' ',
       separator_highlight = {colors.purple,colors.bg},
       highlight = {colors.fg,colors.purple}
     }

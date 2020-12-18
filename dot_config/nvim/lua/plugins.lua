@@ -31,6 +31,7 @@ return require("packer").startup({
       require("plugins.completion"),
       require("plugins.which-key"),
       require("plugins.telescope"),
+      require("plugins.neogit"),
     }
   end,
   config = {
