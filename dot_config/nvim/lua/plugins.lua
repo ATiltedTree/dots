@@ -35,7 +35,9 @@ return require("packer").startup({
     }
   end,
   config = {
-    non_interactive = true
+    display = {
+      open_fn = require("packer.util").float,
+    }
   }
 })
 
