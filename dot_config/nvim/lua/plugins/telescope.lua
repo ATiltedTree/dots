@@ -12,6 +12,8 @@ function config()
     }
   })
 
+  telescope.load_extension("project")
+
   utils.map("n","<leader><Space>", {}, builtins.git_files)
   utils.map("n","<leader>.", {}, builtins.find_files)
   utils.map("n","<leader>/", {}, builtins.live_grep)
@@ -29,6 +31,9 @@ function config()
 
   -- Files
   utils.map("n", "<leader>fr", {}, builtins.oldfiles)
+
+  -- Projects
+  utils.map("n", "<leader>pp", {}, telescope.extensions.project.project)
   
   -- telescope-packer CAUSES ALL PLUGINS TO BE REMOVED
   --utils.map("n","<leader>hp", {}, telescope.extensions.packer.plugins)
@@ -41,6 +46,7 @@ return {
     {"nvim-lua/popup.nvim"},
     {"nvim-lua/plenary.nvim"},
     {"nvim-telescope/telescope-packer.nvim"},
+    {"nvim-telescope/telescope-project.nvim"},
     --{"nvim-telescope/telescope-dap.nvim"},
   },
 }

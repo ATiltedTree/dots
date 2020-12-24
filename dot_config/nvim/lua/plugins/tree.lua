@@ -13,7 +13,7 @@ function config()
 
   vim.g.lua_tree_icons = {
     default = '',
-    git= {
+    git = {
       unstaged = "✗",
       staged = "✓",
       unmerged = "",
@@ -26,7 +26,7 @@ function config()
     }
   }
 
-  utils.map("n", "<space>op",{},require("tree").toggle)
+  utils.map("n", "<space>op", {}, require("tree").toggle)
 end
 
 return {
