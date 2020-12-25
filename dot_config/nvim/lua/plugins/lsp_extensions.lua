@@ -1,5 +1,5 @@
 function config()
-  vim.cmd [[autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require("lsp_extensions").inlay_hints({ prefix = "  ", highlight = "Comment", enabled = {"ChainingHint"} })]]
+  vim.cmd [[autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require("lsp_extensions").inlay_hints({ prefix = "  " })]]
 end
 
 return {
