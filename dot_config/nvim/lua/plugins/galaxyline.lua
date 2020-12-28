@@ -1,7 +1,7 @@
 function config()
   local gl = require('galaxyline')
   local gls = gl.section
-  gl.short_line_list = {'LuaTree','vista','dbui'}
+  gl.short_line_list = {'NvimTree','vista','dbui'}
 
   local colors = {
     bg = '#282c34',
