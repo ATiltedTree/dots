@@ -11,12 +11,7 @@ return require("packer").startup({
     use { "wbthomason/packer.nvim", opt = true }
 
     use {
-      {
-        "joshdick/onedark.vim",
-        config = function()
-          vim.cmd [[colorscheme onedark]]
-        end,
-      },
+      require("plugins.colors"),
       require("plugins.treesitter"),
       require("plugins.barbar"),
       require("plugins.galaxyline"),
