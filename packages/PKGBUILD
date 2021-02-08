@@ -43,6 +43,7 @@ depends=(
   "dua-cli"
   "neofetch"
   "ntfs-3g"
+  "udisks2"
 
   # network
   "wget"
@@ -89,7 +90,9 @@ depends=(
   # fonts
   "ttf-fira-code"
   "ttf-nerd-fonts-symbols"
-  "ttf-twemoji"
+  "noto-fonts"
+  "noto-fonts-emoji"
+  "noto-fonts-cjk"
 
   # aur
   "paru"
@@ -113,21 +116,12 @@ depends=(
   "neovim-git"
   "wl-clipboard"
 
-  # C/C++
-  "cmake"
-
   ## rust
   "rustup"
   "lldb"
 
-  ## Node
-  "npm"
-
   # desktop apps
   "firefox-developer-edition"
-  "nautilus"
-  "file-roller"
-  "eog"
   "libreoffice-fresh"
 
   # Games

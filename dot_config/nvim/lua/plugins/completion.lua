@@ -19,6 +19,7 @@ function config()
     Class = '',
     Interface = ''
   }
+  vim.g.completion_enable_snippet = "snippets.nvim"
 
   local utils = require("utils")
   local completion = require("completion")
@@ -34,5 +35,5 @@ end
 return {
   "nvim-lua/completion-nvim",
   config = config,
-  requires = {{"hrsh7th/vim-vsnip-integ", requires = {"hrsh7th/vim-vsnip"}}}
+  requires = {"norcalli/snippets.nvim"}
 }

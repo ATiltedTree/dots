@@ -32,6 +32,10 @@ vim.o.hidden = true
 vim.o.wrap = false
 vim.wo.wrap = false
 
+-- Neovide
+vim.g.neovide_cursor_animation_length = 0
+vim.o.guifont = "monospace:h13"
+
 vim.cmd [[set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾]]
 
 -- Provider setup

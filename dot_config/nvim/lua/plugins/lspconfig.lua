@@ -2,7 +2,28 @@ function config()
   local lspconfig = require("lspconfig")
   local utils = require("utils")
 
-  lspconfig.rust_analyzer.setup({})
+  lspconfig.rust_analyzer.setup({
+    settings = {
+      ["rust-analyzer"] = {
+        ["cargo"] = {
+          ["loadOutDirsFromCheck"] = true
+        },
+        ["procMacro"] = {
+          ["enable"] = true
+        }
+      }
+    }
+  })
+
+  lspconfig.texlab.setup({
+    settings = {
+      latex = {
+        build = {
+          onSave = true
+        }
+      }
+    }
+  })
 
   utils.map("n", "<space>cd", {silent = true}, vim.lsp.buf.definition)
   utils.map("n", "<space>ci", {silent = true}, vim.lsp.buf.implementation)

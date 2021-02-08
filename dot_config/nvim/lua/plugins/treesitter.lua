@@ -3,7 +3,12 @@ function config()
     ensure_installed = "all",
     highlight = {
       enable = true,
-      use_languagetree = true,
+    },
+    indent = {
+--      enable = true,
+    },
+    rainbow = {
+      enable = true,
     },
   })
 end
@@ -11,4 +16,8 @@ end
 return {
   "nvim-treesitter/nvim-treesitter",
   config = config,
+  requires = {
+    "romgrk/nvim-treesitter-context",
+    "p00f/nvim-ts-rainbow",
+  }
 }
