@@ -1,0 +1,86 @@
+{
+    "workbench.colorTheme": "Ayu Mirage",
+    "editor.fontFamily": "Symbols Nerd Font,monospace",
+    "editor.fontLigatures": true,
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "rust-analyzer.procMacro.enable": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<space>",
+                "c",
+                "f"
+            ],
+            "commands": [
+                "editor.action.format",
+            ]
+        },
+        {
+            "before": [
+                "K",
+            ],
+            "commands": [
+                "editor.action.showHover",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "c",
+                "d"
+            ],
+            "commands": [
+                "editor.action.goToDeclaration",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "c",
+                "a",
+            ],
+            "commands": [
+                "editor.action.quickFix",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "<space>",
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+            ]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-o>": false,
+        "<C-k>": false,
+        "<C-b>": false,
+        "<C-n>": false,
+        "<C-w>": false,
+    },
+    "vim.hlsearch": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.linkedEditing": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.smoothScrolling": true,
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.list.smoothScrolling": true,
+    "window.menuBarVisibility": "hidden",
+    "rust-analyzer.lens.implementations": false,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "latex.build.onSave": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "cmake.revealLog": "never",
+    "cmake.generator": "Ninja",
+    "window.zoomLevel": 0,
+    "rewrap.autoWrap.enabled": true
+}

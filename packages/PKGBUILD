@@ -9,8 +9,10 @@ depends=(
   # base
   "base"
   "linux"
+  "linux-headers"
+  "linux-zen"
+  "linux-zen-headers"
   "linux-firmware"
-  "btrfs-progs"
   "man-pages"
   "man-db"
   "chezmoi"
@@ -35,6 +37,8 @@ depends=(
 
   # boot
   "intel-ucode"
+  "kernel-install-hook"
+  "systemd-boot-pacman-hook"
 
   # files
   "lsd"
@@ -48,26 +52,26 @@ depends=(
   # network
   "wget"
   "rsync"
-  "openssh"
   "networkmanager"
 
   # security
   "gnome-keyring"
-  "pinentry"
+  "gnupg"
 
   # hardware
-  "fwupd"
-  "upower"
-  "logiops"
+  "logiops-git"
   "epson-inkjet-printer-escpr"
   "samsung-unified-driver"
+  "droidcam"
+  "android-tools"
+
+  ## Video acceleration
+  "libva-mesa-driver"
+  "mesa-vdpau"
 
   # audio
   "pulseaudio"
   "pulseaudio-alsa"
-  "pulseaudio-bluetooth"
-  "bluez"
-  "bluez-utils"
   "spotifyd"
   "spotify-tui"
 
@@ -82,9 +86,31 @@ depends=(
   "playerctl"
   "pavucontrol"
   "xdg-user-dirs"
+  "wl-clipboard"
+
+  # GNOME
+  "gdm"
+  "gnome-calendar"
+  "gnome-screenshot"
+  "gnome-tweaks"
+  "simple-scan"
+  "eog"
+  "evince"
+  "file-roller"
+  "celluloid"
+  "gnome-shell-extension-appindicator"
+  "gnome-shell-extension-pop-shell-git"
+  "gnome-shell-extension-sound-output-device-chooser"
+  "gnome-shell-extensions"
+  "python-nautilus"
+
+  # QT
+  "qt5-wayland"
+  "qt5ct"
 
   # themes
   "nordic-theme-git"
+  "kvantum-theme-nordic-git"
   "papirus-icon-theme"
 
   # fonts
@@ -96,39 +122,57 @@ depends=(
 
   # aur
   "paru"
-
-  # git
-  "git"
+  "devtools"
 
   # shell
   "fish"
   "bass-fish"
   "starship"
-  "alacritty"
   "pkgfile"
   "bpytop"
+  "youtube-dl"
+  "github-cli"
+  "pandoc-bin"
 
   # Spelling
   "hunspell"
   "hunspell-en_US"
+  "hunspell-de"
 
   # dev stuff
   "neovim-git"
-  "wl-clipboard"
+  "code"
 
   ## rust
   "rustup"
+  "rust-analyzer"
   "lldb"
+  "llvm"
+
+  ## LaTeX
+  "texlab"
+  "texlive-core"
+  "texlive-pictures"
 
   # desktop apps
-  "firefox-developer-edition"
+  "brave"
   "libreoffice-fresh"
+  "libreoffice-fresh-de"
+  "alacritty"
+  "discord_arch_electron"
+  "ghidra"
+  "ghidra-desktop"
+  "gimp"
 
   # Games
+  "steam"
+  "steam-native-runtime"
 
-  # videos
-  "celluloid"
-  "youtube-dl"
+  # Wine
+  "wine-staging"
+  "winetricks"
+  "vkd3d"
+  "lib32-vkd3d"
 
   # Virtual Machines
   "dnsmasq"
@@ -136,6 +180,9 @@ depends=(
   "edk2-ovmf"
   "qemu"
   "virt-manager"
+
+  # TO BE REMOVED WHEN SOON UNSUED
+  "libpipewire02"
 )
 source=()
 sha256sums=()
