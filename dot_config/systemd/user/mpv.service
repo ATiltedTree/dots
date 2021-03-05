@@ -1,0 +1,15 @@
+[Unit]
+Description=MPV
+Documentation=man:mpv(1)
+Wants=sound.target
+After=sound.target
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=%h/.local/bin/mpv-service
+Restart=always
+
+[Install]
+WantedBy=default.target
+

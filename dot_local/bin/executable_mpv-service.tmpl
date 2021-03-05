@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+PLAYLIST="{{ .youtube_playlist }}"
+ARGS=(
+    --no-video
+    --shuffle
+    --quiet
+    --loop-playlist
+    --pause
+)
+
+mpv "${PLAYLIST}" ${ARGS[*]}

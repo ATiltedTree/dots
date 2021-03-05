@@ -1,2 +1,6 @@
+{{- $youtube_playlist := promptString "Your Youtube Playlist to play with MPV" -}}
+
 [merge]
-  command = "nvim"
+  command = "nvim -d"
+[data]
+  youtube_playlist = "{{ $youtube_playlist }}"
