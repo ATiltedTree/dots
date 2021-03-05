@@ -1,7 +1,10 @@
 # Environment variables
 
-# Import /etc/profile
-bass source /etc/profile
+# Importing is only required on sway
+if test $XDG_SESSION_DESKTOP = "sway"
+    # Import /etc/profile
+    bass source /etc/profile
+end
 
 # The editor to use
 set -gx EDITOR nvim

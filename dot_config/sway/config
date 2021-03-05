@@ -200,4 +200,5 @@ exec systemctl --user import-environment \
                                 WAYLAND_DISPLAY \
                                 XCURSOR_SIZE \
                                 XCURSOR_THEME \
+  && systemctl --user set-environment XDG_CURRENT_DESKTOP=sway \
   && systemctl --user start sway-session.target
