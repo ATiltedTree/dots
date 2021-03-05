@@ -1,0 +1,15 @@
+--write-description
+--write-info-json
+--write-thumbnail
+--write-sub
+
+--embed-subs
+
+--merge-output-format mkv
+--recode-video mkv
+
+--postprocessor-args "-vcodec copy -acodec copy"
+
+--console-title
+
+-o "~/Videos/%(extractor)s/%(uploader)s - %(uploader_id)s/%(title)s - %(id)s/%(title)s.%(ext)s"
