@@ -98,8 +98,9 @@ depends=(
   "evince"
   "file-roller"
   "celluloid"
+  "mpv-mpris"
   "gnome-shell-extension-appindicator"
-  "gnome-shell-extension-pop-shell-git"
+  "gnome-shell-extension-pop-shell"
   "gnome-shell-extension-sound-output-device-chooser"
   "gnome-shell-extensions"
   "python-nautilus"
@@ -142,6 +143,10 @@ depends=(
   # dev stuff
   "neovim-git"
   "code"
+  "imhex"
+  "ghidra"
+  "ghidra-desktop"
+  "alacritty"
 
   ## rust
   "rustup"
@@ -153,15 +158,12 @@ depends=(
   "texlab"
   "texlive-core"
   "texlive-pictures"
+  "texlive-science"
+  "texlive-latexextra"
 
   # desktop apps
   "brave"
-  "libreoffice-fresh"
-  "libreoffice-fresh-de"
-  "alacritty"
   "discord_arch_electron"
-  "ghidra"
-  "ghidra-desktop"
   "gimp"
 
   # Games
@@ -170,6 +172,8 @@ depends=(
 
   # Wine
   "wine-staging"
+  "wine-mono"
+  "wine-gecko"
   "winetricks"
   "vkd3d"
   "lib32-vkd3d"
@@ -180,9 +184,6 @@ depends=(
   "edk2-ovmf"
   "qemu"
   "virt-manager"
-
-  # TO BE REMOVED WHEN SOON UNSUED
-  "libpipewire02"
 )
 source=()
 sha256sums=()
