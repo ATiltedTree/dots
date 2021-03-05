@@ -1,11 +1,9 @@
 function config()
-  vim.g.edge_style = "aura"
-  vim.g.edge_enable_italic = false
-  vim.g.edge_sign_column_background = "none"
-  vim.cmd [[colorscheme edge]]
+  vim.g.ayucolor = "mirage"
+  vim.cmd [[colorscheme ayu]]
 end
 
 return {
-  "sainnhe/edge",
+  "Luxed/ayu-vim",
   config = config,
 }
