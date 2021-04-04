@@ -5,6 +5,7 @@
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
     "rust-analyzer.procMacro.enable": true,
     "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
     "vim.normalModeKeyBindings": [
         {
             "before": [
@@ -54,14 +55,6 @@
             ]
         }
     ],
-    "vim.handleKeys": {
-        "<C-f>": false,
-        "<C-o>": false,
-        "<C-k>": false,
-        "<C-b>": false,
-        "<C-n>": false,
-        "<C-w>": false,
-    },
     "vim.hlsearch": true,
     "workbench.iconTheme": "material-icon-theme",
     "editor.linkedEditing": true,
@@ -75,7 +68,7 @@
     "workbench.list.smoothScrolling": true,
     "window.menuBarVisibility": "hidden",
     "rust-analyzer.lens.implementations": false,
-    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "dart.previewLsp": true,
     "latex.build.onSave": true,
     "workbench.startupEditor": "newUntitledFile",
     "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
@@ -83,7 +76,10 @@
     "cmake.generator": "Ninja",
     "lldb.library": "/usr/lib/liblldb.so",
     "cSpell.userWords": [
-        "Tilmann"
+        "Jahresmittelniderschlag",
+        "Tilmann",
+        "fallocate",
+        "posix"
     ],
     "better-comments.tags": [
         {
@@ -141,5 +137,10 @@
             "italic": false
         }
     ],
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "editor.suggestSelection": "first",
+    "dart.debugExternalLibraries": true,
+    "dart.debugSdkLibraries": true,
+    "editor.minimap.enabled": false,
+    "crates.localCargoIndexBranch": "origin/HEAD"
 }
