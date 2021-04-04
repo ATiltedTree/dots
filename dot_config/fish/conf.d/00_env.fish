@@ -6,9 +6,6 @@ if test $XDG_SESSION_DESKTOP = "sway"
     bass source /etc/profile
 end
 
-# The editor to use
-set -gx EDITOR nvim
-
 # PATH
 set -U fish_user_paths $HOME/.local/bin $CARGO_HOME/bin
 
