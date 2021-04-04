@@ -10,8 +10,6 @@ depends=(
   "base"
   "linux"
   "linux-headers"
-  "linux-zen"
-  "linux-zen-headers"
   "linux-firmware"
   "man-pages"
   "man-db"
@@ -51,7 +49,6 @@ depends=(
 
   # network
   "wget"
-  "rsync"
   "networkmanager"
 
   # security
@@ -60,6 +57,7 @@ depends=(
 
   # hardware
   "logiops-git"
+  "solaar"
   "epson-inkjet-printer-escpr"
   "samsung-unified-driver"
   "droidcam"
@@ -70,10 +68,9 @@ depends=(
   "mesa-vdpau"
 
   # audio
-  "pulseaudio"
-  "pulseaudio-alsa"
-  "spotifyd"
-  "spotify-tui"
+  "pipewire"
+  "pipewire-alsa"
+  "pipewire-pulse"
 
   # Sway
   "sway"
@@ -97,7 +94,7 @@ depends=(
   "eog"
   "evince"
   "file-roller"
-  "celluloid"
+  "mpv"
   "mpv-mpris"
   "gnome-shell-extension-appindicator"
   "gnome-shell-extension-pop-shell"
@@ -130,10 +127,13 @@ depends=(
   "bass-fish"
   "starship"
   "pkgfile"
+
+  # tools
   "bpytop"
   "youtube-dl"
-  "github-cli"
   "pandoc-bin"
+  "waifu2x-ncnn-vulkan"
+  "go-ipfs"
 
   # Spelling
   "hunspell"
@@ -143,7 +143,6 @@ depends=(
   # dev stuff
   "neovim-git"
   "code"
-  "imhex"
   "ghidra"
   "ghidra-desktop"
   "alacritty"
@@ -164,26 +163,29 @@ depends=(
   # desktop apps
   "brave"
   "discord_arch_electron"
-  "gimp"
+  "obs-studio-git"
+  #"gimp" # Add when GTK3
 
   # Games
-  "steam"
-  "steam-native-runtime"
+  #"steam"
+  #"steam-native-runtime"
 
   # Wine
-  "wine-staging"
-  "wine-mono"
-  "wine-gecko"
-  "winetricks"
-  "vkd3d"
-  "lib32-vkd3d"
+  #"wine-staging"
+  #"wine-mono"
+  #"wine-gecko"
+  #"winetricks"
 
   # Virtual Machines
   "dnsmasq"
   "ebtables"
   "edk2-ovmf"
   "qemu"
+  "qemu-arch-extra"
   "virt-manager"
+
+  # TBR/TBD
+  "libpipewire02"
 )
 source=()
 sha256sums=()
