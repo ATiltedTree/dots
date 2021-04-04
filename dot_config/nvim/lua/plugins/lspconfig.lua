@@ -2,28 +2,14 @@ function config()
   local lspconfig = require("lspconfig")
   local utils = require("utils")
 
-  lspconfig.rust_analyzer.setup({
-    settings = {
-      ["rust-analyzer"] = {
-        ["cargo"] = {
-          ["loadOutDirsFromCheck"] = true
-        },
-        ["procMacro"] = {
-          ["enable"] = true
-        }
-      }
-    }
-  })
-
-  lspconfig.texlab.setup({
-    settings = {
-      latex = {
-        build = {
-          onSave = true
-        }
-      }
-    }
-  })
+  -- Load server configs
+  local server_configs = utils.read_dir(vim.fn.stdpath("config") .. "/lua/plugins/lspconfig")
+  for _, file in ipairs(server_configs.files) do
+    local server = file:gsub(".lua", "")
+    if server ~= "init" then
+      require("plugins.lspconfig." .. server)
+    end
+  end
 
   utils.map("n", "<space>cd", {silent = true}, vim.lsp.buf.definition)
   utils.map("n", "<space>ci", {silent = true}, vim.lsp.buf.implementation)
@@ -41,4 +27,5 @@ end
 return {
   "neovim/nvim-lspconfig",
   config = config,
+--  requires = {"akinsho/flutter-tools.nvim"}
 }
