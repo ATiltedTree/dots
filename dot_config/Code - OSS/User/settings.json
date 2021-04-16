@@ -3,6 +3,7 @@
     "editor.fontFamily": "Symbols Nerd Font,monospace",
     "editor.fontLigatures": true,
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "rust-analyzer.cargo.runBuildScripts": true,
     "rust-analyzer.procMacro.enable": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": false,
@@ -76,21 +77,9 @@
     "cmake.generator": "Ninja",
     "lldb.library": "/usr/lib/liblldb.so",
     "cSpell.userWords": [
-        "Jahresmittelniderschlag",
         "Tilmann",
-        "fallocate",
-        "posix"
     ],
     "better-comments.tags": [
-        {
-            "tag": "!",
-            "color": "#FF2D00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
         {
             "tag": "?",
             "color": "#3498DB",
@@ -142,5 +131,14 @@
     "dart.debugExternalLibraries": true,
     "dart.debugSdkLibraries": true,
     "editor.minimap.enabled": false,
-    "crates.localCargoIndexBranch": "origin/HEAD"
+    "crates.localCargoIndexBranch": "origin/HEAD",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
