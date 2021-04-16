@@ -6,16 +6,27 @@
     "sway/workspaces",
     "sway/mode"
   ],
-  "modules-center": ["sway/window"],
+  "modules-center": [
+    "sway/window"
+  ],
   "modules-right": [
     "tray",
+    "custom/media",
     "idle_inhibitor",
-    "network",
     "pulseaudio",
-    "memory",
-    "cpu",
     "clock"
   ],
+  "custom/media": {
+    "format": "{icon}{}",
+    "return-type": "json",
+    "format-icons": {
+      "Playing": " ",
+      "Paused": " "
+    },
+    "max-length": 30,
+    "exec": "playerctl metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause"
+  },
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{name}"
@@ -48,20 +59,14 @@
     "format": "CPU {usage:2}%"
   },
   "tray": {
-    "icon-size": 20
+    "icon-size": 21,
+    "spacing": 10
   },
   "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-  },
-  "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  }
 }
