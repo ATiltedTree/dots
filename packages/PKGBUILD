@@ -97,7 +97,7 @@ depends=(
   "mpv"
   "mpv-mpris"
   "gnome-shell-extension-appindicator"
-  "gnome-shell-extension-pop-shell"
+  "gnome-shell-extension-pop-shell-git"
   "gnome-shell-extension-sound-output-device-chooser"
   "gnome-shell-extensions"
   "python-nautilus"
@@ -167,14 +167,14 @@ depends=(
   #"gimp" # Add when GTK3
 
   # Games
-  #"steam"
-  #"steam-native-runtime"
+  "steam"
+  "steam-native-runtime"
 
   # Wine
-  #"wine-staging"
-  #"wine-mono"
-  #"wine-gecko"
-  #"winetricks"
+  "wine-staging"
+  "wine-mono"
+  "wine-gecko"
+  "winetricks"
 
   # Virtual Machines
   "dnsmasq"
