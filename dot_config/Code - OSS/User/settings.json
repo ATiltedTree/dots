@@ -140,5 +140,10 @@
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.language": "de,en",
+    "redhat.telemetry.enabled": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
