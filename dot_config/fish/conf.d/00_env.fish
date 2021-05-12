@@ -6,10 +6,11 @@ if test "$XDG_SESSION_DESKTOP" = sway
     bass source /etc/profile
 end
 
-# PATH
-fish_add_path ~/.local/bin
-fish_add_path $CARGO_HOME/bin
-fish_add_path $FLUTTER_HOME/bin
+# Import systemd env
+bass export (/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+
+# Deduplicate PATH
+set -x PATH (echo $PATH | tr ' ' '\n' | awk '!seen[$0]++')
 
 # Greeting
 set fish_greeting
