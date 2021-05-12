@@ -14,8 +14,8 @@ function config()
 
   telescope.load_extension("project")
 
-  utils.map("n","<leader><Space>", {}, builtins.git_files)
-  utils.map("n","<leader>.", {}, builtins.find_files)
+  utils.map("n","<leader><Space>", {}, builtins.find_files)
+  utils.map("n","<leader>.", {}, builtins.git_files)
   utils.map("n","<leader>/", {}, builtins.live_grep)
   utils.map("n","<leader>:", {}, builtins.commands)
 
