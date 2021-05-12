@@ -1,0 +1,9 @@
+[package]
+name = "swaysome"
+version = "1.0.0"
+authors = ["Tilmann Meyer <allescrafterx@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+swayipc = "3.0.0-alpha.3"
+clap = "3.0.0-beta.2"
