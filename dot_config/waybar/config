@@ -24,8 +24,8 @@
       "Paused": " "
     },
     "max-length": 30,
-    "exec": "playerctl metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause"
+    "exec": "playerctl -p mpv metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl -p mpv play-pause"
   },
   "sway/workspaces": {
     "disable-scroll": true,
