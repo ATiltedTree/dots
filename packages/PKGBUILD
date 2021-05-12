@@ -38,14 +38,24 @@ depends=(
   "kernel-install-hook"
   "systemd-boot-pacman-hook"
 
-  # files
+  # tools
   "lsd"
   "fd"
   "ripgrep"
+  "sd"
   "dua-cli"
   "neofetch"
   "ntfs-3g"
   "udisks2"
+  "bpytop"
+  "youtube-dl"
+  "pandoc-bin"
+  "waifu2x-ncnn-vulkan"
+  "go-ipfs"
+  "xdelta3"
+  "binwalk"
+  "bind"
+  "neovim-git"
 
   # network
   "wget"
@@ -60,7 +70,8 @@ depends=(
   "solaar"
   "epson-inkjet-printer-escpr"
   "samsung-unified-driver"
-  "droidcam"
+  "droidcam-obs-plugin-git"
+  "v4l2loopback-dkms"
   "android-tools"
 
   ## Video acceleration
@@ -85,17 +96,18 @@ depends=(
   "xdg-user-dirs"
   "wl-clipboard"
 
+  ## Screenshots -- see dot_local/bin/executable_grimshot
+  "grim"
+  "slurp"
+  "jq"
+  "libnotify"
+
   # GNOME
   "gdm"
-  "gnome-calendar"
-  "gnome-screenshot"
   "gnome-tweaks"
   "simple-scan"
-  "eog"
   "evince"
   "file-roller"
-  "mpv"
-  "mpv-mpris"
   "gnome-shell-extension-appindicator"
   "gnome-shell-extension-pop-shell-git"
   "gnome-shell-extension-sound-output-device-chooser"
@@ -103,8 +115,14 @@ depends=(
   "python-nautilus"
 
   # QT
+
+  ## 5
   "qt5-wayland"
   "qt5ct"
+
+  ## 6
+  "qt6-wayland"
+  "qt6ct"
 
   # themes
   "nordic-theme-git"
@@ -128,24 +146,16 @@ depends=(
   "starship"
   "pkgfile"
 
-  # tools
-  "bpytop"
-  "youtube-dl"
-  "pandoc-bin"
-  "waifu2x-ncnn-vulkan"
-  "go-ipfs"
-
   # Spelling
   "hunspell"
   "hunspell-en_US"
   "hunspell-de"
 
   # dev stuff
-  "neovim-git"
-  "code"
-  "ghidra"
-  "ghidra-desktop"
-  "alacritty"
+
+  ## C/C++
+  "meson"
+  "bear"
 
   ## rust
   "rustup"
@@ -164,6 +174,13 @@ depends=(
   "brave"
   "discord_arch_electron"
   "obs-studio-git"
+  "mpv"
+  "mpv-mpris"
+  "imv"
+  "alacritty"
+  "code"
+  "ghidra"
+  "ghidra-desktop"
   #"gimp" # Add when GTK3
 
   # Games
@@ -181,11 +198,7 @@ depends=(
   "ebtables"
   "edk2-ovmf"
   "qemu"
-  "qemu-arch-extra"
   "virt-manager"
-
-  # TBR/TBD
-  "libpipewire02"
 )
 source=()
 sha256sums=()
