@@ -1,8 +1,9 @@
 # Environment variables
 
-# Importing is only required on sway
-if test "$XDG_SESSION_DESKTOP" = sway
-    # Import /etc/profile
+status is-login
+
+# If we are a login shell import /etc/profile
+if test $status -eq 0
     bass source /etc/profile
 end
 
