@@ -18,14 +18,15 @@ input * {
 ## Primary
 output DP-3 {
     position 0 0
-    adaptive_sync on
-    bg ~/.local/share/backgrounds/Arch.png fill
 }
 
 ## Secondary
 output HDMI-A-1 {
     position 1920 70
-    adaptive_sync on
+}
+
+## Global
+output * {
     bg ~/.local/share/backgrounds/Arch.png fill
 }
 
