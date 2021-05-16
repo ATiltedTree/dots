@@ -56,6 +56,9 @@ depends=(
   "binwalk"
   "bind"
   "neovim-git"
+  "handlr"
+  "xdg-utils-handlr"
+  "upower"
 
   # network
   "wget"
@@ -95,24 +98,13 @@ depends=(
   "pavucontrol"
   "xdg-user-dirs"
   "wl-clipboard"
+  "clipman"
 
   ## Screenshots -- see dot_local/bin/executable_grimshot
   "grim"
   "slurp"
   "jq"
   "libnotify"
-
-  # GNOME
-  "gdm"
-  "gnome-tweaks"
-  "simple-scan"
-  "evince"
-  "file-roller"
-  "gnome-shell-extension-appindicator"
-  "gnome-shell-extension-pop-shell-git"
-  "gnome-shell-extension-sound-output-device-chooser"
-  "gnome-shell-extensions"
-  "python-nautilus"
 
   # QT
 
@@ -174,24 +166,41 @@ depends=(
   "brave"
   "discord_arch_electron"
   "obs-studio-git"
-  "mpv"
-  "mpv-mpris"
   "imv"
   "alacritty"
   "code"
-  "ghidra"
-  "ghidra-desktop"
+  "simple-scan"
+  "file-roller"
   #"gimp" # Add when GTK3
 
+  ## Zathura
+  "zathura"
+  "zathura-pdf-poppler"
+
+  ## MPV
+  "mpv"
+  "mpv-mpris"
+
+  ## Ghidra
+  "ghidra"
+  "ghidra-desktop"
+
+  ## Thunar
+  "thunar"
+  "thunar-archive-plugin"
+  "thunar-volman"
+  "tumbler"
+  "ffmpegthumbnailer"
+  "gvfs"
+
   # Games
-  "steam"
-  "steam-native-runtime"
+  #"steam"
+  #"steam-native-runtime"
 
   # Wine
   "wine-staging"
   "wine-mono"
   "wine-gecko"
-  "winetricks"
 
   # Virtual Machines
   "dnsmasq"
