@@ -30,13 +30,12 @@ fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     match args {
         Args::Init { name } => {
             let outputs = connection.get_outputs()?;
-            let current_output = get_current_output_index(&outputs);
 
             for output in outputs.iter().rev() {
                 let cmd = format!("focus output {}", output.name);
                 connection.run_command(cmd).expect("Command failed");
 
-                let cmd = format!("workspace {}{}", current_output, name);
+                let cmd = format!("workspace {}{}", get_current_output_index(&outputs), name);
                 connection.run_command(cmd).expect("Command failed");
             }
         }

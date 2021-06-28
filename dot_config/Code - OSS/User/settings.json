@@ -3,8 +3,8 @@
     "editor.fontFamily": "Symbols Nerd Font,monospace",
     "editor.fontLigatures": true,
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
-    "rust-analyzer.cargo.runBuildScripts": true,
-    "rust-analyzer.procMacro.enable": true,
+    // Change to true when fixed: https://github.com/rust-analyzer/rust-analyzer/issues/8925
+    "rust-analyzer.procMacro.enable": false,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": false,
     "vim.normalModeKeyBindings": [
@@ -70,11 +70,7 @@
     "window.menuBarVisibility": "hidden",
     "rust-analyzer.lens.implementations": false,
     "dart.previewLsp": true,
-    "latex.build.onSave": true,
     "workbench.startupEditor": "newUntitledFile",
-    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
-    "cmake.revealLog": "never",
-    "cmake.generator": "Ninja",
     "lldb.library": "/usr/lib/liblldb.so",
     "cSpell.userWords": [
         "Tilmann",
@@ -145,5 +141,8 @@
     "redhat.telemetry.enabled": false,
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "rust-analyzer.cargo.useRustcWrapperForBuildScripts": false,
+    "ltex.java.path": "/usr/lib/jvm/default/",
+    "rust-analyzer.diagnostics.disabled": ["unlinked-file"]
 }

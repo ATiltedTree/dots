@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+# Stop sway-sessio
+systemctl stop --user sway-session.target
+
+# Exit sway
+swaymsg exit

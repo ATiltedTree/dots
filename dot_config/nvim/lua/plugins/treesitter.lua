@@ -1,4 +1,4 @@
-function config()
+local function config()
   require("nvim-treesitter.configs").setup({
     ensure_installed = "all",
     highlight = {

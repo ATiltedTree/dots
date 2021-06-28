@@ -1,0 +1,253 @@
+pkgname=atiltedtree
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Packages installed by atiltedtree"
+arch=("any")
+url="https://github.com/ATiltedTree/dots"
+license=('MIT')
+depends=(
+  # base
+  "base" # base duh
+
+  ## Linux
+  "linux" # kernel
+  "linux-headers" # headers
+  "linux-firmware" # firmware
+
+  ## man
+  "man-pages"
+  "man-db"
+
+  ## dotfile management
+  "chezmoi"
+
+  # base-devel -- group needed for builing packages
+  "autoconf"
+  "automake"
+  "bison"
+  "fakeroot"
+  "flex"
+  "gcc"
+  "make"
+  "patch"
+  "pkgconf"
+  "sudo"
+  "which"
+
+  # other arch
+  "pacman-contrib" # various scripts
+  "reflector" # mirrorlist rotation
+  "pkgstats" # logging package usage
+
+  # boot
+  "intel-ucode" # Intel microcode
+  "kernel-install-hook"
+  "systemd-boot-pacman-hook"
+
+  # tools
+
+  ## files
+  "lsd" # list files better
+  "fd" # find files better
+  "ripgrep" # grep files better
+  "sd" # replace text better
+  "dua-cli" # find big files
+  "pandoc-bin"
+  "xdelta3" # patch binary files
+  "binwalk" # find  embedded data
+
+  ## MIME/Desktop entris
+  "handlr" # better xdg-utils
+  "xdg-utils-handlr" # overwrite xdg-utils
+
+  # filesystems
+  "gvfs" # gnome vfs
+  "gvfs-mtp" # Phone mounting
+  "ntfs-3g" # NTFS driver -- remove when kernel impl is ready
+
+  # network
+  "wget" # Get stuff
+  "xh" # curl but better
+  "bind" # dig and other dns and network utils
+  "networkmanager"
+
+  # security
+  "gnome-keyring" # store keys
+  "gnupg" # GPG
+
+  # hardware
+  "epson-inkjet-printer-escpr" # Epson printer
+  "samsung-unified-driver" # Samsung printer
+  "droidcam-obs-plugin" # droidcam OBS plugin
+  "v4l2loopback-dkms" # virtual loopback video
+  "android-tools" # adb, fastboot, etc.
+
+  ## Tools
+  "bottom" # system monitor
+  "radeontop" # gpu monitor
+  "upower" # power monitor
+  "udisks2" # disk mounter and monitor
+  "neofetch" # fetch system info
+  "usbutils" # work with usb devices
+  "picocom" # serial/UART tool
+
+  ## Video acceleration
+  "libva-mesa-driver" # VA-API
+  "mesa-vdpau" # VDPAU
+
+  ## Vulkan
+  "vulkan-radeon"
+
+  # audio
+  "pipewire" # PW
+  "pipewire-alsa" # PW ALSA adaptor
+  "pipewire-pulse" # PW PulseAudio adaptor
+  "pipewire-jack-dropin" ## PW JACK adaptor
+  "helvum" # PW patchbay
+  "pavucontrol" # PulseAudio manager
+
+  # Sway
+  "sway"
+  "swayidle" # Idle daemon
+  "swaylock" # Screenlocker
+  "mako" # Notification daemon
+  "wofi" # program launcher
+  "waybar" # Bar
+  "polkit-gnome" # Polkit frontend for GTK/GNOME
+  "playerctl" # Get player info
+  "xdg-user-dirs"
+  "wl-clipboard" # Clipboard
+  "clipman" # Clipboard manager
+  "wtype" # Type keys
+
+  ## XWayland -- remove when no longer needed
+  "xorg-xwayland"
+
+  ## Screenshots -- see dot_local/bin/executable_grimshot
+  "grim"
+  "slurp"
+  "jq"
+  "libnotify"
+
+  # QT
+  "adwaita-qt"
+
+  ## 5
+  "qt5-wayland"
+  "qt5ct"
+
+  ## 6
+  "qt6-wayland"
+  "qt6ct"
+
+  # themes
+  "papirus-icon-theme"
+
+  # fonts
+  "ttf-fira-code" # Primary monospace font
+  "ttf-nerd-fonts-symbols" # NerdFonts
+
+  ## Noto
+  "noto-fonts"
+  "noto-fonts-emoji" # Color emojis
+  "noto-fonts-cjk" # CJK
+
+  # aur
+  "paru"
+  "devtools"
+
+  # shell
+  "fish"
+  "bass-fish"
+  "starship"
+  "pkgfile"
+
+  # Spelling
+  "hunspell"
+  "hunspell-en_US"
+  "hunspell-de"
+
+  # dev stuff
+  "neovim"
+  "perf"
+
+  ## LLVM
+  "lldb"
+  "llvm"
+  "lld"
+
+  ## C/C++
+  "cmake"
+  "ninja"
+
+  ## rust
+  "rustup"
+  "rust-analyzer"
+
+  ## LaTeX
+  "texlab"
+  "texlive-core"
+  "texlive-pictures"
+  "texlive-science"
+  "texlive-latexextra"
+
+  # desktop apps
+  "firefox"
+  "thunderbird"
+  "discord_arch_electron"
+  "obs-studio"
+  "imv"
+  "alacritty"
+  "code"
+  "simple-scan"
+  "gimp"
+
+  ## LibreOffice
+  "libreoffice-fresh"
+  "libreoffice-fresh-de"
+  "libreoffice-extension-languagetool"
+  "hyphen-de"
+
+  ## Zathura
+  "zathura"
+  "zathura-pdf-poppler"
+
+  ## MPV
+  "mpv"
+  "mpv-mpris"
+  "youtube-dl"
+
+  ## Thunar
+  "thunar"
+  "thunar-archive-plugin"
+  "thunar-volman"
+  "thunar-media-tags-plugin"
+  "tumbler"
+  "ffmpegthumbnailer"
+  "file-roller"
+
+  ## Spotify
+  "spotifyd"
+  "spotify-tui"
+
+  # QEMU
+  "qemu"
+  "qemu-arch-extra"
+  "binfmt-qemu-all-arch"
+  "edk2-ovmf"
+
+  # VirtManager
+  "dnsmasq"
+  "iptables-nft"
+  "virt-manager"
+
+  # Games
+  "gamehub"
+  "dolphin-emu"
+  "osu-lazer"
+
+  # Wine
+  "wine-all"
+)
+source=()
+sha256sums=()

@@ -28,4 +28,5 @@ return {
   "neovim/nvim-lspconfig",
   config = config,
 --  requires = {"akinsho/flutter-tools.nvim"}
+  requires = {"folke/lua-dev.nvim"},
 }

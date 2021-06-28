@@ -34,7 +34,7 @@ function config()
 
   -- Projects
   utils.map("n", "<leader>pp", {}, telescope.extensions.project.project)
-  
+
   -- telescope-packer CAUSES ALL PLUGINS TO BE REMOVED
   --utils.map("n","<leader>hp", {}, telescope.extensions.packer.plugins)
 end

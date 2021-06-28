@@ -12,8 +12,10 @@
   "modules-right": [
     "tray",
     "custom/media",
-    "idle_inhibitor",
     "pulseaudio",
+    "cpu",
+    "memory",
+    "idle_inhibitor",
     "clock"
   ],
   "custom/media": {
@@ -24,39 +26,25 @@
       "Paused": " "
     },
     "max-length": 30,
-    "exec": "playerctl -p mpv metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl -p mpv play-pause"
+    "escape": true,
+    "exec": "playerctl metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause"
   },
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{name}"
   },
   "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "{:%d.%m.%Y}"
+    "interval": 1,
+    "format": "{:%H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "pulseaudio": {
-    "format": "{icon} {volume:2}%",
-    "format-bluetooth": "{icon} {volume}%",
+    "format": " {volume:2}%",
+    "format-bluetooth": " {volume}%",
     "format-muted": "婢 {volume:2}%",
-    "format-icons": {
-      "headphones": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
     "scroll-step": 5,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-  },
-  "memory": {
-    "interval": 5,
-    "format": "Mem {}%"
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "CPU {usage:2}%"
   },
   "tray": {
     "icon-size": 21,
@@ -68,5 +56,15 @@
       "activated": "",
       "deactivated": ""
     }
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {usage}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {percentage}%",
+    "max-length": 10
   }
 }

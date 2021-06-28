@@ -8,6 +8,8 @@ After=sway-session.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/wl-paste -t text --watch clipman store
+Restart=always
+Slice=session.slice
 
 [Install]
 WantedBy=sway-session.target

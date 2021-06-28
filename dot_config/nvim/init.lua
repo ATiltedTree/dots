@@ -6,8 +6,8 @@ vim.o.termguicolors = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+vim.o.shiftwidth = 4
+vim.bo.shiftwidth = 4
 
 vim.o.number = true
 vim.wo.number = true

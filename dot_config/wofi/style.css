@@ -1,14 +1,19 @@
+@define-color bg #1f2430;
+@define-color fg #cbccc6;
+@define-color comment #5c6773;
+@define-color markup #f28779;
+
 window {
   margin: unset;
   border: unset;
-  background-color: #2e3440;
+  background-color: @bg;
 }
 
 #input {
   margin: 5px;
   border: unset;
-  background-color: #3b4252;
-  color: #eceff4;
+  background-color: #141925;
+  color: @fg;
 }
 
 #inner-box {
@@ -32,5 +37,5 @@ window {
 
 #text {
   margin: 5px;
-  color: #eceff4;
+  color: @fg;
 }

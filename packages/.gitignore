@@ -1,4 +1,4 @@
-/src
-/pkg
-/*.pkg.*
-/.SRCINFO
+src
+pkg
+*.pkg.*
+.SRCINFO

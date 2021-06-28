@@ -10,6 +10,7 @@ Type=dbus
 ExecStart=/usr/bin/mako
 ExecReload=/usr/bin/makoctl reload
 BusName=org.freedesktop.Notifications
+Slice=session.slice
 
 [Install]
 WantedBy=sway-session.target

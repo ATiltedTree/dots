@@ -9,6 +9,7 @@ After=sway-session.target
 Type=simple
 ExecStart=/usr/bin/waybar
 Restart=always
+Slice=session.slice
 
 [Install]
 WantedBy=sway-session.target
